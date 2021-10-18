@@ -1,0 +1,18 @@
+server:
+  port: 80
+  
+spring: 
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/megabox?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: root
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
