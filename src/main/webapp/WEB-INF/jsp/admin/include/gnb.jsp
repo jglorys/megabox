@@ -6,8 +6,8 @@
 <div class="d-flex align-itmes-center">
 	<%-- 로고 좌측 --%>
 	<div class="col-4 d-flex align-items-end justify-content-around">
-		<a href="#" class="font-weight-bold" style="color: black">영화</a>
-		<a href="#" class="font-weight-bold" style="color: black">상영시간표</a>
+		<a href="/admin/movie/movie_list_view" class="font-weight-bold" style="color: black; text-decoration:none">영화</a>
+		<a href="/admin/schedule/schedule_list_view" class="font-weight-bold" style="color: black; text-decoration:none">상영시간표</a>
 	</div>
 
 	<%-- 로고 --%>
@@ -17,12 +17,13 @@
 	<%-- 로고 우측 --%>
 	<div class="col-4">
 		<div class="h-50 d-flex justify-content-end">
-			<a href="#" class="font-weight-bold ml-3 mt-4" style="color: black">로그아웃</a>
+			<a href="/admin/administrator/sign_out" class="font-weight-bold ml-3 mt-4" style="color: black; text-decoration:none">로그아웃</a>
 		</div>
 		<div class="h-50 d-flex align-items-end justify-content-around">
-			<a href="#" class="font-weight-bold" style="color: black">이벤트</a>
-			<a href="#" class="font-weight-bold" style="color: black">스토어</a>
+			<a href="#" class="font-weight-bold" style="color: black; text-decoration:none">이벤트</a>
+			<a href="#" class="font-weight-bold" style="color: black; text-decoration:none">스토어</a>
 		</div>	
 	</div>
 	
 </div>
+

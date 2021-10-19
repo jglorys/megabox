@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
+
+body {background-color: #E6E6E6;}
 header {height:160px;}
 
-
+a {text-decoration:none;}
 

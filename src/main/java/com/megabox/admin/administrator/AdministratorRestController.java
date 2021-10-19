@@ -29,9 +29,11 @@ public class AdministratorRestController {
 	@PostMapping("/administrator/sign_in") 
 	public Map<String, Object> signIn(
 			@RequestParam("loginId") String loginId,
-			@RequestParam("password") String password
+			@RequestParam("password") String password,
+			HttpServletRequest request
 			) {
-
+		HttpSession session = request.getSession();
+		session.setMaxInactiveInterval(60*60); //session 유지시간 = 3600초 = 60분
 		Map<String, Object> result = new HashMap<>();
 		result.put("result", "error");
 		
@@ -44,6 +46,7 @@ public class AdministratorRestController {
 			logger.error("[/admin/administrator/sign_in] 관리자 로그인 실패");
 			return result;
 		}
+		session.setAttribute("admin", "isAdmin");
 		result.put("result", "success");
 		return result;
 	}

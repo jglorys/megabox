@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/admin/style.css">
  
 </head>
 <body>
@@ -22,7 +22,7 @@
 			<jsp:include page="../include/gnb.jsp" />
 			<!-- 상대경로이므로 앞에 / 안붙이고, 부모인 admin폴더로 올라가니까 ../ 문법 사용 -->
 		</header>
-		
+		<hr>
 		<section class="contents">
 			<jsp:include page="../${viewName}.jsp" />
 
