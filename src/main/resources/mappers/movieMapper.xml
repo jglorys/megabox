@@ -38,7 +38,64 @@
  		, NOW()
  		, NOW()
  		)
- 	
  	</insert>
+ 	
+ 	<select id="selectMovieList" resultType="com.megabox.admin.movie.model.Movie">
+ 		SELECT
+ 			`id`
+ 			,`title`
+			,`director`
+			,`genre`
+			,`actor`
+			,`rating`
+			,`releasedDate`
+			,`isScreening`
+			,`runningTime`
+			,`viewingClass`
+			,`posterImage`
+			,`introduction`
+			,`ranking`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM 
+ 			`movie`
+ 		ORDER BY `ranking`
+ 	</select>
+ 	
+ 	 <select id="selectMovie" parameterType="int" resultType="com.megabox.admin.movie.model.Movie">
+ 		SELECT
+ 			`id`
+ 			,`title`
+			,`director`
+			,`genre`
+			,`actor`
+			,`rating`
+			,`releasedDate`
+			,`isScreening`
+			,`runningTime`
+			,`viewingClass`
+			,`posterImage`
+			,`introduction`
+			,`ranking`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM 
+ 			`movie`
+ 		WHERE `id` = #{id}
+ 	</select>
+ 	
+ 	<update id="updateMovie" parameterType="map">
+ 		UPDATE `movie`
+		SET
+			`rating` = #{rating}
+			, `isScreening` = #{isScreening}
+			, `ranking` = #{ranking}
+			, `introduction` = #{introduction}
+			, `updatedAt` = NOW()
+		WHERE
+			`id` = #{id}
+ 	
+ 	</update>
+ 	
 
  </mapper>

@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.megabox.admin.movie.bo.MovieBO;
+import com.mysql.cj.util.StringUtils;
 
 @RequestMapping("/admin/movie")
 @RestController
-public class MovieRestController {
+public class AdminMovieRestController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -46,14 +47,37 @@ public class MovieRestController {
 		String admin = (String) session.getAttribute("admin");
 		Map<String, Object> result = new HashMap<>();
 		result.put("result", "error");
-		String n = null;
-		if (admin.equals(n)) {
+		if (StringUtils.isNullOrEmpty(admin)) {
 			logger.info("[/admin/movie/create] session 없음");
 			return result;
 		}
 		
 		int row = movieBO.createMovie(admin, title, director, genre, actor, rating, releasedDate, isScreening, runningTime, viewingClass, file, introduction, ranking);
-		
+		if (row < 1) {
+			return result;
+		}
+		result.put("result", "success");
+		return result;
+	}
+	
+	@PostMapping("/update")
+	public Map<String, Object> movieUpdate(
+			@RequestParam("id") int id,
+			@RequestParam("rating") String rating,
+			@RequestParam("isScreening") String isScreening,
+			@RequestParam("ranking") String ranking,
+			@RequestParam("introduction") String introduction,
+			HttpServletRequest request
+			) {
+		HttpSession session = request.getSession();
+		String admin = (String) session.getAttribute("admin");
+		Map<String, Object> result = new HashMap<>();
+		result.put("result", "error");
+		if (StringUtils.isNullOrEmpty(admin)) {
+			logger.info("[/admin/movie/update] session 없음");
+			return result;
+		}
+		movieBO.updateMovie(id, rating, isScreening, ranking, introduction);
 		result.put("result", "success");
 		return result;
 		

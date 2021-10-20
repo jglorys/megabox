@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
  
 </head>
-<body>
+<body style="background-color: #E6E6E6;">
 	<div class="container adminSignIn">
 		<header>
 			<div class="d-flex align-items-center justify-content-center">

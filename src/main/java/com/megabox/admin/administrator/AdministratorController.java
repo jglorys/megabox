@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mysql.cj.util.StringUtils;
+
 @RequestMapping("/admin")
 @Controller
 public class AdministratorController {
@@ -25,8 +27,7 @@ public class AdministratorController {
 		HttpSession session = request.getSession();
 		String admin = (String) session.getAttribute("admin");
 		
-		
-		 if ( admin.equals("") ) { // session 없음
+		 if (StringUtils.isNullOrEmpty(admin)) { // session 없음 - null검사와 비어있는지 검사 함께
 		 logger.info("[/admin/administrator/sign_out] session 없음"); 
 		 return "redirect:/admin/administrator/sign_in_view"; 
 		 }

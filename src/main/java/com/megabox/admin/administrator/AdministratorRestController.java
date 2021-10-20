@@ -46,7 +46,7 @@ public class AdministratorRestController {
 			logger.error("[/admin/administrator/sign_in] 관리자 로그인 실패");
 			return result;
 		}
-		session.setAttribute("admin", "isAdmin");
+		session.setAttribute("admin", "admin");
 		result.put("result", "success");
 		return result;
 	}

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- JSTL Core태그 --%>
 
 <div class="p-5">
 	<div class="d-flex justify-content-between">
@@ -9,30 +11,24 @@
 	
 	<table class="table mt-4 table-hover table-striped">
 		<thead class="text-center">
-			<tr>
-				<th>No.</th>
+			<tr class="bg-light">
+				<th>순위</th>
 				<th>제목</th>
 				<th>감독</th>
 				<th>수정</th>
 			</tr>
 		</thead>
 		<tbody class="text-center">
+			<c:forEach items="${movieList}" var="movie">
 			<tr>
-				<td>1</td>
-				<td>아버지의 길</td>
-				<td>슬로단 고르보비치</td>
+				<td>${movie.ranking}</td>
+				<td>${movie.title}</td>
+				<td>${movie.director}</td>
 				<td>
-					<button type="button" class="btn btn-secondary">수정</button>
+					<a href="/admin/movie/movie_update_view?movieId=${movie.id}" ><button type="button" class="btn btn-secondary" data-movie-id="">수정</button></a>
 				</td>
 			</tr>
-			<tr>
-				<td>2</td>
-				<td>007 노 타임 투 다이</td>
-				<td>캐리 후쿠나가</td>
-				<td>
-					<button type="button" class="btn btn-secondary">수정</button>
-				</td>
-			</tr>
+			</c:forEach>
 		</tbody>
 	
 	</table>

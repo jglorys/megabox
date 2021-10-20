@@ -7,63 +7,63 @@
 		<table class="table table-striped w-75 ml-5 mt-2">
 			<tbody class="text-center">
 				<tr>
-					<th>제목</th>
+					<th class="bg-light">제목</th>
 					<td>
 						<input type="text" id="movieTitle" class="form-control" placeholder="제목을 입력해주세요">
 					</td>
 				</tr>
 				<tr>
-					<th>감독</th>
+					<th class="bg-light">감독</th>
 					<td>
 						<input type="text" id="movieDirector" class="form-control" placeholder="감독명을 입력해주세요">
 					</td>
 				</tr>
 				<tr>
-					<th>개봉</th>
+					<th class="bg-light">개봉</th>
 					<td>
 						<input type="text" id="movieReleasedDate" class="form-control" placeholder="예) 20210102">
 					</td>
 				</tr>
 				<tr>
-					<th>장르</th>
+					<th class="bg-light">장르</th>
 					<td>
 						<input type="text" id="movieGenre" class="form-control" placeholder="장르를 입력해주세요">
 					</td>
 				</tr>
 				<tr>
-					<th>출연</th>
+					<th class="bg-light">출연</th>
 					<td>
 						<input type="text" id="movieActor" class="form-control" placeholder="주연배우명을 입력해주세요">
 					</td>
 				</tr>
 				<tr>
-					<th>평점</th>
+					<th class="bg-light">평점</th>
 					<td>
 						<input type="text" id="movieRating" class="form-control" placeholder="평점을 입력해주세요 예)9.99">
 					</td>
 				</tr>
 				<tr>
-					<th>상영시간(분)</th>
+					<th class="bg-light">상영시간(분)</th>
 					<td>
 						<input type="text" id="movieRunningTime" class="form-control" placeholder="예) 2시간이면 120">
 					</td>
 				</tr>
 				<tr>
-					<th>예매순위</th>
+					<th class="bg-light"h>예매순위</th>
 					<td>
 						<input type="text" id="movieRanking" class="form-control" placeholder="예매순위를 입력해주세요">
 					</td>
 				</tr>
 				<tr>
-					<th>상영여부</th>
+					<th class="bg-light">상영여부</th>
 					<td>
 						<input type="text" id="movieIsScreening" class="form-control" placeholder="Y/N">
 					</td>
 				</tr>
 				<tr>
-					<th>영화관람등급</th>
+					<th class="bg-light">영화관람등급</th>
 					<td>
-						<input type="text" id="movieViewingClass" class="form-control" placeholder="영화관람등급을 입력해주세요">
+						<input type="text" id="movieViewingClass" class="form-control" placeholder="전체 / 12세 / 15세 / 청불">
 					</td>
 				</tr>
 			</tbody>
