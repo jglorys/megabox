@@ -3,11 +3,11 @@ package com.megabox.auditorium.model;
 import java.util.Date;
 
 public class Auditorium {
-	int id;
-	int name;
-	int seatCnt;
-	Date createdAt;
-	Date updatedAt;
+	private int id;
+	private int name;
+	private int seatCnt;
+	private Date createdAt;
+	private Date updatedAt;
 	
 	public int getId() {
 		return id;

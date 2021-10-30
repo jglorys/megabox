@@ -3,21 +3,21 @@ package com.megabox.admin.movie.model;
 import java.util.Date;
 
 public class Movie {
-	int id;
-	String title;
-	String director;
-	String genre;
-	String actor;
-	double rating;
-	String releasedDate;
-	String isScreening;
-	int runningTime;
-	String viewingClass;
-	String posterImage;
-	String introduction;
-	int ranking;
-	Date createdAt;
-	Date updatedAt;
+	private int id;
+	private String title;
+	private String director;
+	private String genre;
+	private String actor;
+	private double rating;
+	private String releasedDate;
+	private String isScreening;
+	private int runningTime;
+	private String viewingClass;
+	private String posterImage;
+	private String introduction;
+	private int ranking;
+	private Date createdAt;
+	private Date updatedAt;
 	
 	public int getId() {
 		return id;

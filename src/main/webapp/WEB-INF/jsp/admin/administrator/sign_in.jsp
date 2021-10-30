@@ -80,12 +80,12 @@
 						if (data.result == 'success') {
 							alert("관리자 로그인 완료");
 							location.href = "/admin/movie/movie_list_view";
-						} else {
-							alert("관리자 로그인에 실패했습니다");
+						} 
+					},
+					error:function(e) {
+							alert("관리자 로그인에 실패했습니다" + e);
 						}
-					}
-					
-				})
+				});
 			});
 		});
 	

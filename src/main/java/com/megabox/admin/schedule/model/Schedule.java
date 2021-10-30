@@ -3,14 +3,14 @@ package com.megabox.admin.schedule.model;
 import java.util.Date;
 
 public class Schedule {
-	int id;
-	int movieId;
-	String movieTitle;
-	int auditoriumId;
-	int auditoriumName;
-	String time;
-	Date createdAt;
-	Date updatedAt;
+	private int id;
+	private int movieId;
+	private String movieTitle;
+	private int auditoriumId;
+	private int auditoriumName;
+	private String time;
+	private Date createdAt;
+	private Date updatedAt;
 	
 	
 	public int getId() {
