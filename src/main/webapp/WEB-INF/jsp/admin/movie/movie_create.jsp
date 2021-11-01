@@ -57,13 +57,23 @@
 				<tr>
 					<th class="bg-light">상영여부</th>
 					<td>
-						<input type="text" id="movieIsScreening" class="form-control" placeholder="Y/N">
+						<select id="movieIsScreening" class="form-control">
+							<option value="none" disabled selected>=== 선택 ===</option>
+							<option>Y</option>
+							<option>N</option>
+						</select>
 					</td>
 				</tr>
 				<tr>
 					<th class="bg-light">영화관람등급</th>
 					<td>
-						<input type="text" id="movieViewingClass" class="form-control" placeholder="전체 / 12세 / 15세 / 청불">
+						<select id="movieViewingClass" class="form-control">
+							<option value="none" disabled selected>=== 선택 ===</option>
+							<option>전체</option>
+							<option>12세</option>
+							<option>15세</option>
+							<option>청불</option>
+						</select>
 					</td>
 				</tr>
 			</tbody>
@@ -138,16 +148,18 @@ $(document).ready(function(){
 			alert('예매순위를 입력해주세요.');
 			return;
 		}
-		let movieIsScreening = $('#movieIsScreening').val().trim();
+		let movieIsScreening = $('#movieIsScreening').val();
 		if (movieIsScreening == '') {
 			alert('상영여부를 입력해주세요.');
 			return;
 		}
-		let movieViewingClass = $('#movieViewingClass').val().trim();
+		let movieViewingClass = $('#movieViewingClass').val();
 		if (movieViewingClass == '') {
 			alert('영화관람등급을 입력해주세요.');
 			return;
 		}
+		alert(movieViewingClass);
+		
 		let movieIntroduction = $('#movieIntroduction').val().trim();
 		if (movieIntroduction == '') {
 			alert('영화설명을 입력해주세요.');

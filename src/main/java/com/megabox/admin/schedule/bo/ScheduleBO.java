@@ -38,4 +38,8 @@ public class ScheduleBO {
 	public List<Schedule> getScheduleList() {
 		return scheduleDAO.selectScheduleList();
 	}
+	
+	public List<Schedule> getScheduleByMovieId(int movieId) {
+		return scheduleDAO.selectScheduleByMovieId(movieId);
+	}
 }

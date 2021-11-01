@@ -39,5 +39,20 @@
  			`schedule`
  	</select>
  	
+ 	<select id="selectScheduleByMovieId" resultType="com.megabox.admin.schedule.model.Schedule" parameterType="int">
+ 		SELECT
+ 			`id`
+	 		,`movieId`
+			,`movieTitle`
+			,`auditoriumId`
+			,`auditoriumName`
+			,`time`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM 
+ 			`schedule`
+ 		WHERE
+ 			`movieId` = #{movieId}
+ 	</select>
 </mapper> 	
  

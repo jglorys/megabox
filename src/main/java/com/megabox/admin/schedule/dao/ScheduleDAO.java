@@ -18,4 +18,6 @@ public interface ScheduleDAO {
 			@Param("time") String time);
 	
 	public List<Schedule> selectScheduleList();
+	
+	public List<Schedule> selectScheduleByMovieId(int movieId);
 }

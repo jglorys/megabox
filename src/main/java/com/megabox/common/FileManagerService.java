@@ -24,7 +24,7 @@ public class FileManagerService {
 	
 	// 실제 이미지가 저장될 경로 (경로 복붙하고 맨 마지막에 "/" 붙이자!
 	public final static String ADMIN_FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images\\admin/";
-	//public final static String FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images/";
+	//public final static String FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images\\admin/";
 	
 	// 바이너리 파일을 통으로 받아서 url로 만들고 걔를 리턴 (나중에 BO가 파일줄테니깐 url내놓으라고 함)
 	public String adminSaveFile(String admin, MultipartFile file) throws IOException {
@@ -46,7 +46,7 @@ public class FileManagerService {
 		Files.write(path, bytes);
 		
 		// 이미지 URL Path를 리턴한다. - 웹주소로 들어갔을때 이미지가 보여지게
-		// 예) http://localhost/images/   qwer_138237428/   apple.png
+		// 예) http://localhost/images/admin/   qwer_138237428/   apple.png
 		return "/images/admin/" + directoryName + file.getOriginalFilename();
 	}
 	
