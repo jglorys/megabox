@@ -54,5 +54,21 @@
  		WHERE
  			`movieId` = #{movieId}
  	</select>
+ 	
+ 	<select id="selectSchedule" resultType="com.megabox.admin.schedule.model.Schedule" parameterType="int">
+ 		SELECT
+ 			`id`
+	 		,`movieId`
+			,`movieTitle`
+			,`auditoriumId`
+			,`auditoriumName`
+			,`time`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM 
+ 			`schedule`
+ 		WHERE
+ 			`id` = #{id}
+ 	</select>
 </mapper> 	
  

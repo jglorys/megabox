@@ -42,4 +42,8 @@ public class ScheduleBO {
 	public List<Schedule> getScheduleByMovieId(int movieId) {
 		return scheduleDAO.selectScheduleByMovieId(movieId);
 	}
+	
+	public Schedule getSchedule(int id) {
+		return scheduleDAO.selectSchedule(id);
+	}
 }

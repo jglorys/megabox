@@ -29,7 +29,7 @@
 		<c:if test="${not empty userId}">
 			<div class="h-50 d-flex justify-content-end">
 				<a href="/user/sign_out" class="font-weight-bold ml-3 mt-4" style="color: black; text-decoration:none">로그아웃</a>
-				<a href="/schedule/movie_schedule_select_view" class="font-weight-bold ml-3 mt-4" style="color: black; text-decoration:none">예매하기</a>
+				<a href="/reservation/reservation_date_select_view" class="font-weight-bold ml-3 mt-4" style="color: black; text-decoration:none">예매하기</a>
 			</div>
 		</c:if>
 		<c:if test="${empty userId}">

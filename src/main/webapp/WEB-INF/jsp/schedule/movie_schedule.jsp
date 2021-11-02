@@ -10,7 +10,7 @@
 <div class="mt-4 p-3">
 	<div class="d-flex justify-content-around align-items-center">
 		<a href="/schedule/movie_schedule_select_view"class="font-weight-bold mt-4 p-3" style="background-color:#BDBDBD; border-radius: 2em; color: black; text-decoration:none">상영시간표</a>
-		<a href="#" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">예매하기</a>		
+		<a href="/reservation/reservation_date_select_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">예매하기</a>		
 	</div>
 	<hr width="700" noshade>
 </div>

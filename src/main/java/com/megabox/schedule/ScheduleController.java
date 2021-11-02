@@ -2,8 +2,6 @@ package com.megabox.schedule;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +25,7 @@ public class ScheduleController {
 	
 	@RequestMapping("/movie_schedule_select_view")
 	public String movieScheduleSelect(Model model) {
-		
+
 		List<Movie> movieList = movieBO.getMovieList();
 		model.addAttribute("movieList", movieList);
 		model.addAttribute("viewName", "schedule/movie_schedule_select");
