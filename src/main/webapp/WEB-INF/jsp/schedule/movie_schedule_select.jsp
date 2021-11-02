@@ -6,8 +6,8 @@
 <%-- 상영시간표@@ & 예매하기 --%>
 <div class="mt-4 p-3">
 	<div class="d-flex justify-content-around align-items-center">
-		<a href="/schedule/movie_schedule_select_view" class="font-weight-bold mt-4 bg-secondary p-3" style="color: black; text-decoration:none">상영시간표</a>
-		<a href="#" class="font-weight-bold mt-4 bg-light p-3" style="color: black; text-decoration:none">예매하기</a>		
+		<a href="/schedule/movie_schedule_select_view"class="font-weight-bold mt-4 p-3" style="background-color:#BDBDBD; border-radius: 2em; color: black; text-decoration:none">상영시간표</a>
+		<a href="#" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">예매하기</a>		
 	</div>
 	<hr width="700" noshade>
 </div>
@@ -33,7 +33,7 @@
 			<c:if test="${movie.viewingClass eq '청불'}">
 				<img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/KMRB_D.png" width="40" height="40" class="mt-3 mr-2">
 			</c:if>
-			<a href="/schedule/movie_schedule_view?movieId=${movie.id}" class="font-weight-bold mt-4 p-3 bg-light" style="color: black; text-decoration:none">${movie.title}</a>
+			<a href="/schedule/movie_schedule_view?movieId=${movie.id}" class="font-weight-bold mt-4 p-3 bg-light" style=" border-radius: 2em; color: black; text-decoration:none">${movie.title}</a>
 		</div>
 	</c:forEach>
 	</div>

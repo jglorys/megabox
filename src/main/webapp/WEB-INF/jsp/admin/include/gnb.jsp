@@ -12,7 +12,8 @@
 
 	<%-- 로고 --%>
 	<div class="col-4 d-flex align-items-center justify-content-center">
-		<img src="https://w.namu.la/s/1fcec37b924dd133f451ac4d3fa4563469da23ca9732d78a9d47e2944060da9feb6f1a8f76837f259f6a822db6976ce89eb266548c3de58fe221923cbc54abd7634444414316e26ca191a3a356d97490" width="300">
+		<a href="/admin/movie/movie_list_view"><img src="https://w.namu.la/s/1fcec37b924dd133f451ac4d3fa4563469da23ca9732d78a9d47e2944060da9feb6f1a8f76837f259f6a822db6976ce89eb266548c3de58fe221923cbc54abd7634444414316e26ca191a3a356d97490" width="300">
+		</a>
 	</div>
 	<%-- 로고 우측 --%>
 	<div class="col-4">

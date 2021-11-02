@@ -158,7 +158,6 @@ $(document).ready(function(){
 			alert('영화관람등급을 입력해주세요.');
 			return;
 		}
-		alert(movieViewingClass);
 		
 		let movieIntroduction = $('#movieIntroduction').val().trim();
 		if (movieIntroduction == '') {

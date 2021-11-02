@@ -15,7 +15,7 @@
 		<div class="h-50 d-flex align-items-end justify-content-around">
 			<a href="#" class="site-map-btn" data-toggle="modal" data-target="#moreModal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" width="30" height="30"></a>
 			<a href="/movie/movie_list_view" class="gnb-txt-movie"><img alt="gnb movie" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-movie.png"></a>
-			<a href="/reservation/reservation_date_select_view" class="gnb-txt-reservation"><img alt="gnb reservation" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-reserve.png"></a>
+			<a href="/schedule/movie_schedule_select_view" class="gnb-txt-reservation"><img alt="gnb reservation" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-reserve.png"></a>
 		</div>
 	</div>
 

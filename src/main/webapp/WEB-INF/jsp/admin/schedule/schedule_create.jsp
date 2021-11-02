@@ -69,6 +69,7 @@ $(document).ready(function(){
 			alert('상영날짜와 시간을 입력해주세요');
 			return;
 		}
+		alert(time.substring(0,4) + '년' + time.substring(4,6) + '월' + time.substring(6,8) + '일' + time.substring(8,10) + '시' + time.substring(10,12) + '분으로 등록합니다.' );
 		
 		let movieId = $('#scheduleMovie').val();
 		//alert(movieId);

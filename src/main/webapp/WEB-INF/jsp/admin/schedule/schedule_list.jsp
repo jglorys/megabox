@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- JSTL Core태그 --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 
 <div class="p-5">
 	<div class="d-flex justify-content-between">
@@ -24,7 +26,12 @@
 				<td>${schedule.id}</td>
 				<td>${schedule.movieTitle}</td>
 				<td>${schedule.auditoriumName}관</td>
-				<td>${schedule.time}</td>
+				<td>
+				${fn:substring(schedule.time,0,4)}년
+				${fn:substring(schedule.time,4,6)}월
+				${fn:substring(schedule.time,6,8)}일
+				${fn:substring(schedule.time,8,10)}시
+				${fn:substring(schedule.time,10,12)}분</td>
 			</tr>
 			</c:forEach>
 		</tbody>
