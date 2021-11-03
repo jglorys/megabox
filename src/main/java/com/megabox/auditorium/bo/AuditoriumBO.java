@@ -17,8 +17,12 @@ public class AuditoriumBO {
 		return auditoriumDAO.selectAuditoriumList();
 	}
 	
-	public Auditorium getAuditorium(int auditoriumId) {
-		return auditoriumDAO.selectAuditorium(auditoriumId);
+	public Auditorium getAuditorium(int id) {
+		return auditoriumDAO.selectAuditorium(id);
+	}
+	
+	public int getSeatCnt(int id) {
+		return auditoriumDAO.selectSeatCnt(id);
 	}
 	
 	

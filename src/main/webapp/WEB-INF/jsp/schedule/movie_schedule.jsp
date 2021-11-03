@@ -32,11 +32,12 @@
 				<th>11월1일</th>
 			</thead>
 			<tbody class="text-center">
-				<c:forEach items="${scheduleList}" var="schedule">
+				<c:forEach items="${scheduleViewList}" var="scheduleView">
 						<%-- s${fn:substring(schedule.time,4,8)} : 1101, 1102, ... --%>
-						<c:if test="${fn:substring(schedule.time,4,8) eq '1101'}">
+						<c:if test="${fn:substring(scheduleView.schedule.time,4,8) eq '1101'}">
 							<tr>
-								<td>${fn:substring(schedule.time,8,10)} : ${fn:substring(schedule.time,10,12)}</td>
+								<td>${fn:substring(scheduleView.schedule.time,8,10)} : ${fn:substring(scheduleView.schedule.time,10,12)}
+								( ${scheduleView.leftSeat}석 )</td>
 							</tr>
 							
 						</c:if>
@@ -49,11 +50,12 @@
 				<th>11월2일</th>
 			</thead>
 			<tbody class="text-center">
-				<c:forEach items="${scheduleList}" var="schedule">
+				<c:forEach items="${scheduleViewList}" var="scheduleView">
 						<%-- s${fn:substring(schedule.time,4,8)} : 1101, 1102, ... --%>
-						<c:if test="${fn:substring(schedule.time,4,8) eq '1102'}">
+						<c:if test="${fn:substring(scheduleView.schedule.time,4,8) eq '1102'}">
 							<tr>
-								<td>${fn:substring(schedule.time,8,10)} : ${fn:substring(schedule.time,10,12)}</td>
+								<td>${fn:substring(scheduleView.schedule.time,8,10)} : ${fn:substring(scheduleView.schedule.time,10,12)}
+								( ${scheduleView.leftSeat}석 )</td>
 							</tr>
 							
 						</c:if>
@@ -65,11 +67,12 @@
 				<th>11월3일</th>
 			</thead>
 			<tbody class="text-center">
-				<c:forEach items="${scheduleList}" var="schedule">
+				<c:forEach items="${scheduleViewList}" var="scheduleView">
 						<%-- s${fn:substring(schedule.time,4,8)} : 1101, 1102, ... --%>
-						<c:if test="${fn:substring(schedule.time,4,8) eq '1103'}">
+						<c:if test="${fn:substring(scheduleView.schedule.time,4,8) eq '1103'}">
 							<tr>
-								<td>${fn:substring(schedule.time,8,10)} : ${fn:substring(schedule.time,10,12)}</td>
+								<td>${fn:substring(scheduleView.schedule.time,8,10)} : ${fn:substring(scheduleView.schedule.time,10,12)}
+								( ${scheduleView.leftSeat}석 )</td>
 							</tr>
 							
 						</c:if>
@@ -81,11 +84,12 @@
 				<th>11월4일</th>
 			</thead>
 			<tbody class="text-center">
-				<c:forEach items="${scheduleList}" var="schedule">
+				<c:forEach items="${scheduleViewList}" var="scheduleView">
 						<%-- s${fn:substring(schedule.time,4,8)} : 1101, 1102, ... --%>
-						<c:if test="${fn:substring(schedule.time,4,8) eq '1104'}">
+						<c:if test="${fn:substring(scheduleView.schedule.time,4,8) eq '1104'}">
 							<tr>
-								<td>${fn:substring(schedule.time,8,10)} : ${fn:substring(schedule.time,10,12)}</td>
+								<td>${fn:substring(scheduleView.schedule.time,8,10)} : ${fn:substring(scheduleView.schedule.time,10,12)}
+								( ${scheduleView.leftSeat}석 )</td>
 							</tr>
 							
 						</c:if>

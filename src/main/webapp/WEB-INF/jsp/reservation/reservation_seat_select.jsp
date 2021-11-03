@@ -19,5 +19,17 @@
 <hr width="400" noshade>
 
 <div class="d-flex justify-content-center text-center">
-	<h4>인원 및 좌석을 선택해주세요</h4>	
+	<h4>인원 및 좌석을 선택해주세요</h4>
 </div>
+
+<div class="d-flex justify-content-center p-5 m-2" style="border:1px solid black; border-radius: 5px; width: 80%;">
+	<div class="col-3"></div>
+	<div class="col-6">
+		<span>성인</span>
+		<input type="number" class="form-control"/>
+	</div>
+	
+
+
+</div>
+<div></div>

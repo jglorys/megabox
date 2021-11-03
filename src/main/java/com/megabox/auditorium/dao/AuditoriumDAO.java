@@ -13,4 +13,5 @@ public interface AuditoriumDAO {
 	
 	public Auditorium selectAuditorium(int id);
 
+	public int selectSeatCnt(int id);
 }

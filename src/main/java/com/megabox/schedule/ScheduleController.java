@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.megabox.admin.movie.bo.MovieBO;
 import com.megabox.admin.movie.model.Movie;
 import com.megabox.admin.schedule.bo.ScheduleBO;
-import com.megabox.admin.schedule.model.Schedule;
+import com.megabox.schedule.bo.ScheduleViewBO;
+import com.megabox.schedule.model.ScheduleView;
 
 @RequestMapping("/schedule")
 @Controller
@@ -22,6 +23,9 @@ public class ScheduleController {
 	
 	@Autowired
 	private MovieBO movieBO;
+	
+	@Autowired
+	private ScheduleViewBO scheduleViewBO;
 	
 	@RequestMapping("/movie_schedule_select_view")
 	public String movieScheduleSelect(Model model) {
@@ -36,10 +40,11 @@ public class ScheduleController {
 	public String movieSchedule(Model model,
 							@RequestParam("movieId") int movieId
 								) {
-		List<Schedule> scheduleList = scheduleBO.getScheduleByMovieId(movieId);
 		Movie movie = movieBO.getMovie(movieId);
+		List<ScheduleView> scheduleViewList = scheduleViewBO.getScheduleViewListByMovieId(movieId);
+		
 		model.addAttribute("movie", movie);
-		model.addAttribute("scheduleList", scheduleList);
+		model.addAttribute("scheduleViewList", scheduleViewList);
 		model.addAttribute("viewName", "schedule/movie_schedule");
 		return "template/layout";
 	}

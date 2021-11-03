@@ -43,7 +43,11 @@ public class ReservationController {
 	@RequestMapping("/reservation_seat_select_view")
 	public String ReservationSeatSelect(Model model,
 										@RequestParam("scheduleId") int scheduleId) {
+		//해당 영화와 시간대의 스케줄 
 		Schedule schedule = scheduleBO.getSchedule(scheduleId);
+		// 그 스케줄에 해당하는 상영관pk로 상영관의 예매 완료된 좌석 가져옴
+		
+		
 		
 		model.addAttribute("schedule", schedule);
 
