@@ -26,12 +26,22 @@ public class ReservationBO {
 		}
 		// 해당 스케줄에 예매한 인원수(잔여좌석 구할때)
 		return sum;
-		
 	}
 	
 	public List<Reservation> getReservationListByScheduleId(int scheduleId) {
 		List<Reservation> reservationList = new ArrayList<>();
 		reservationList = reservationDAO.selectReservationListByScheduleId(scheduleId);
 		return reservationList;
+	}
+	
+	public StringBuilder getReservedSeats(int scheduleId) {
+		StringBuilder reservedSeats = new StringBuilder("");
+		// 해당 스케줄의 예약 목록 다 가져온다
+		List<Reservation> reservationList = getReservationListByScheduleId(scheduleId);
+		// 가져온 리스트에서 예약좌석 꺼내서 reservedSeats에 저장
+		for (Reservation reservation : reservationList) {
+			reservedSeats.append(reservation.getSeatLocation());
+		}
+		return reservedSeats;
 	}
 }
