@@ -53,12 +53,18 @@ public class MovieBO {
 		return movieDAO.selectMovieList();
 	}
 	
-	public Movie getMovie(int movieId) {
-		return movieDAO.selectMovie(movieId);
+	public Movie getMovie(int id) {
+		return movieDAO.selectMovie(id);
 	}
 	
 	public void updateMovie(int id, String rating, String isScreening,  String ranking, String introduction) {
 		movieDAO.updateMovie(id, rating, isScreening, ranking, introduction);
+	}
+	
+	public String getViewingClass(int id) {
+		Movie movie = getMovie(id);
+		String viewingClass = movie.getViewingClass();
+		return viewingClass;
 	}
 
 }

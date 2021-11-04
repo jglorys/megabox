@@ -48,4 +48,21 @@ public class ScheduleViewBO {
 		}
 		return scheduleViewList;
 	}
+	
+	public List<ScheduleView> getScheduleViewListByDate(int date) {
+		List<ScheduleView> scheduleViewList = new ArrayList<>();
+		List<Schedule> scheduleList = scheduleBO.getScheduleList();
+		String yyyymmdd = Integer.toString(date);
+		for (Schedule schedule : scheduleList) {
+			if (schedule.getTime().startsWith(yyyymmdd)) {
+				ScheduleView scheduleView = new ScheduleView();
+				scheduleView.setSchedule(schedule);
+				int leftSeat = auditoriumBO.getSeatCnt(schedule.getAuditoriumId()) - reservationBO.getHeadcountByScheduleId(schedule.getId());
+				scheduleView.setLeftSeat(leftSeat);
+				
+				scheduleViewList.add(scheduleView);
+			}
+		}
+		return scheduleViewList;
+	}
 }

@@ -22,4 +22,5 @@ public interface ScheduleDAO {
 	public List<Schedule> selectScheduleByMovieId(int movieId);
 	
 	public Schedule selectSchedule(int id);
+	
 }

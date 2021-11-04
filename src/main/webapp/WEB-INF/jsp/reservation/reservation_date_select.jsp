@@ -17,8 +17,9 @@
 </div>
 
 <div class="d-flex justify-content-center m-4">
-			<a href="/reservation/reservation_movie_select_view?date=20211101" class="font-weight-bold mt-4 p-3 bg-light" style=" border-radius: 2em; color: black; text-decoration:none">11월 1일</a>
-			<a href="/reservation/reservation_movie_select_view?date=20211102" class="font-weight-bold ml-3 mt-4 p-3 bg-light" style=" border-radius: 2em; color: black; text-decoration:none">11월 2일</a>
-			<a href="/reservation/reservation_movie_select_view?date=20211103" class="font-weight-bold ml-3 mt-4 p-3 bg-light" style=" border-radius: 2em; color: black; text-decoration:none">11월 3일</a>
-			<a href="/reservation/reservation_movie_select_view?date=20211104" class="font-weight-bold ml-3 mt-4 p-3 bg-light" style=" border-radius: 2em; color: black; text-decoration:none">11월 4일</a>
+	<c:forEach var="i" begin="1" end="4">
+		<c:set var="date">2021110${i}</c:set>
+		<a href="/reservation/reservation_movie_select_view?date=${date}" class="font-weight-bold mt-4 ml-2 mr-2 p-3 bg-light" style=" border-radius: 2em; color: black; text-decoration:none;">11월 ${i}일</a>
+	</c:forEach>
+			
 </div>

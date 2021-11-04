@@ -37,6 +37,7 @@
 			,`updatedAt`
  		FROM 
  			`schedule`
+ 		ORDER BY `time` ASC
  	</select>
  	
  	<select id="selectScheduleByMovieId" resultType="com.megabox.admin.schedule.model.Schedule" parameterType="int">
@@ -53,6 +54,7 @@
  			`schedule`
  		WHERE
  			`movieId` = #{movieId}
+ 		ORDER BY `time` ASC
  	</select>
  	
  	<select id="selectSchedule" resultType="com.megabox.admin.schedule.model.Schedule" parameterType="int">

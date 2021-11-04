@@ -1,5 +1,6 @@
 package com.megabox.admin.schedule.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,22 @@ public class ScheduleBO {
 	
 	public Schedule getSchedule(int id) {
 		return scheduleDAO.selectSchedule(id);
+	}
+	
+	public List<String> getMovieTitleByDate(int date) {
+		List<String> movieTitleList = new ArrayList<>();
+		String yyyymmdd = Integer.toString(date);
+		List<Schedule> scheduleList = getScheduleList();
+		for (Schedule schedule : scheduleList) {
+			if (schedule.getTime().startsWith(yyyymmdd)) {
+				String movieTitle = schedule.getMovieTitle();
+				if(movieTitleList.contains(movieTitle)) {
+					//배열에 이미 동일한 영화Title 존재
+					continue;
+				}
+				movieTitleList.add(movieTitle);
+			}
+		}
+		return movieTitleList;
 	}
 }

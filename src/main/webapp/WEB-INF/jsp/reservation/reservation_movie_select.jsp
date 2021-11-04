@@ -16,24 +16,29 @@
 <%--
 <button type="button" class="btn btn-secondary m-4" onclick="location.href='/reservation/reservation_date_select_view'">이전으로</button>	
  --%>
-<div class="d-flex justify-content-center text-center">
+<div class="d-flex justify-content-center text-center mb-4">
 	<h4>${fn:substring(date,4,6)}월 ${fn:substring(date,6,8)}일 상영시간표입니다<br><br>
-	원하시는 영화와 시간을 선택해주세요</h4>	
+	시간대를 선택해주세요</h4>	
 </div>
 
-<div class="d-flex">
-	<div class="col-3"></div>
-	<div class="col-6">
-		<c:forEach items="${scheduleList}" var="schedule">
-			<c:if test="${date eq fn:substring(schedule.time,0,8)}">
-				<div class="mt-5 text-center">
-					<a href="/reservation/reservation_seat_select_view?scheduleId=${schedule.id}" class="font-weight-bold mt-4 p-3 bg-light" style="color: black; border-radius: 2em; text-decoration:none">
-				${schedule.movieTitle}  ${fn:substring(schedule.time,8,10)}:${fn:substring(schedule.time,10,12)}</a>	
-				</div>
-				
-			</c:if>
-		</c:forEach>
+<div class="d-flex justify-content-center">
+	<div style="border-radius: 2em; background-color: #380B61;">
+		<table class="m-4">
+			<c:forEach var="movieTitle" items="${movieTitleList}">			
+						<tr style="height: 100px" class="mt-3">
+							<th class="text-center text-white"><div style="min-width:230px;">${movieTitle}</div></th>
+							<th class="text-center text-white p-3">|</th>
+							<c:forEach items="${scheduleViewList}" var="scheduleView">
+								<c:if test="${movieTitle eq scheduleView.schedule.movieTitle}">
+									<td style="border-top: none; border-bottom: none; width:150px"><a href="/reservation/reservation_seat_select_view?scheduleId=${scheduleView.schedule.id}" class="font-weight-bold mt-4 p-3 bg-light" style="color: black; border-radius: 2em; text-decoration:none">
+						  ${fn:substring(scheduleView.schedule.time,8,10)}:${fn:substring(scheduleView.schedule.time,10,12)} (${ scheduleView.leftSeat }석)</a></td>
+								</c:if>
+							</c:forEach>
+						</tr>
+			</c:forEach>	
+		</table>		
 	</div>
 </div>
+
 
 		
