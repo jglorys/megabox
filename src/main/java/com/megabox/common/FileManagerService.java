@@ -23,13 +23,13 @@ public class FileManagerService {
 	// 넘어온 덩어리 파일을 우리 컴퓨터 폴더에 저장하고, WAS의 url 만들고, url에 접속할때 사진 뿌리게 함
 	
 	// 실제 이미지가 저장될 경로 (경로 복붙하고 맨 마지막에 "/" 붙이자!
-	public final static String ADMIN_FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images\\admin/";
+	public final static String ADMIN_FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images\\\\admin/";
 
 	//public final static String FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images/";
 	
 	
 	// 바이너리 파일을 통으로 받아서 url로 만들고 걔를 리턴 (나중에 BO가 파일줄테니깐 url내놓으라고 함)
-	public String adminSaveFile(String admin, MultipartFile file) throws IOException {
+	public String saveFile(String admin, MultipartFile file) throws IOException {
 		// 파일 디렉토리 경로    예: marobiana_2620349394/apple.png (loginId_현재시간을 변환한값) => 파일명이 겹치지 않게 현재시간을 경로에 붙여준다.
 		String directoryName = admin + "_" + System.currentTimeMillis() + "/";
 		String filePath = ADMIN_FILE_UPLOAD_PATH + directoryName;
@@ -38,7 +38,7 @@ public class FileManagerService {
 		// directory라는 경로에 폴더를 생성
 		if (directory.mkdir() == false) {
 			// 디렉토리가 만들어지지 않음 (에로) -로거로 찍음
-			logger.error("[파일업로드] ADMIN 디렉토리 생성 실패" + directoryName + ", filePath: " + filePath);
+			logger.error("[파일업로드] 디렉토리 생성 실패" + directoryName + ", filePath: " + filePath);
 			return null; //메소드의 역할을 이해하면 어떤 것을 리턴해야 하는지 알 수 있음
 		}
 		

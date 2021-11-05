@@ -93,7 +93,7 @@ public class ReservationController {
 		// 해당 영화&시간대의 상영스케줄 
 		Schedule schedule = scheduleBO.getSchedule(scheduleId);
 		// 그 스케줄에 해당하는 pk로 상영관의 예매 완료된 좌석 가져옴
-		StringBuilder reservedSeats = reservationBO.getReservedSeats(scheduleId);
+		List<String> reservedSeats = reservationBO.getReservedSeats(scheduleId);
 		// 영화관의 전체 좌석 수
 		int seatCount = auditoriumBO.getSeatCnt(schedule.getAuditoriumId());
 		// 영화 관람등급

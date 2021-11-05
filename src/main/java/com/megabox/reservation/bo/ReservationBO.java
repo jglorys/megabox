@@ -40,15 +40,18 @@ public class ReservationBO {
 		return reservationList;
 	}
 	
-	public StringBuilder getReservedSeats(int scheduleId) {
-		StringBuilder reservedSeats = new StringBuilder("");
+	public List<String> getReservedSeats(int scheduleId) {
+		String reservedSeats = "";
 		// 해당 스케줄의 예약 목록 다 가져온다
 		List<Reservation> reservationList = getReservationListByScheduleId(scheduleId);
 		// 가져온 리스트에서 예약좌석 꺼내서 reservedSeats에 저장
 		for (Reservation reservation : reservationList) {
-			reservedSeats.append(reservation.getSeatLocation());
+			reservedSeats += reservation.getSeatLocation() + ",";
 		}
-		return reservedSeats;
+		reservedSeats = reservedSeats.substring(0, reservedSeats.length()-1);
+		List<String> reservedSeatsList = new ArrayList<>();
+				//reservedSeats.split(",");
+		return reservedSeatsList;
 	}
 	
 	public int addReservation(int userId, int scheduleId, int payment, int usedPoint, int adult, int adolescent, int senior, String seatLocation) {

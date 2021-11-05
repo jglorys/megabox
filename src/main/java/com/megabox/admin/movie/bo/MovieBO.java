@@ -40,7 +40,7 @@ public class MovieBO {
 		
 		if (file != null) {
 			try {
-				imagePath = fileManagerService.adminSaveFile(admin, file);
+				imagePath = fileManagerService.saveFile(admin, file);
 			} catch (IOException e) {
 				// 이미지는 실패하고 글만 올라가게
 				imagePath = null;

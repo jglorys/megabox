@@ -41,12 +41,17 @@
 			<img alt="screen" src="https://www.megabox.co.kr/static/pc/images/reserve/img-theater-screen.png" class="mb-4">
 		</div>
 		<div class="d-flex justify-content-center">
-			<div>
+			<div id="reservedSeats" data-reserved-seats="${reservedSeats}">
 			<c:set var="row">A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T</c:set>
 			<c:forEach var="i" begin="0" end="${seatCount/10 -1}" items="${row}">
 				<div class="mb-1">
 					<button type="button" class="btn btn-light mr-3 font-weight-bold" style="width: 50px; background-color:#FBFBEF;">${i}</button>
 					<c:forEach var="j" begin="1" end="10">
+						<c:set var="sd" value="${reservedSeats}"/>
+						<%-- 이미 예매완료된 좌석일 경우 ${fn:substring(schedule.time,10,12)}--%>
+						<c:if test="">
+							<button type="button" class="btn seatBtn" style="width: 50px;" data-seat-row="${i}" data-seat-col="${j}">${j}</button>
+						</c:if>
 						<button type="button" class="btn seatBtn" style="width: 50px;" data-seat-row="${i}" data-seat-col="${j}">${j}</button>
 					</c:forEach>
 					<br>
@@ -92,6 +97,10 @@
 
 <script>
 $(document).ready(function(){
+	// 예매 완료된 좌석
+	var reservedSeats = $('#reservedSeats').data('reserved-seats');
+	console.log("예매완료된 좌석 : " + reservedSeats);
+
 	// 청소년관람불가인 경우 안내문구
 	var viewingClass = $('#viewingClass').data('viewing-class');
 	//alert(viewingClass);
@@ -237,8 +246,7 @@ $(document).ready(function(){
 				// 선택된 인원보다 선택된 좌석이 많을 경우 (아직 ++ 안 된 상태이므로 +1)
 				alert("선택하신 좌석이 인원수를 초과하였습니다");
 				console.log('좌석수' + selectedSeatsCnt + '//인원수' + sum);
-				return;
-				
+				return;			
 			}
 			$(this).addClass("btn-secondary");
 			selectedSeats += seat;

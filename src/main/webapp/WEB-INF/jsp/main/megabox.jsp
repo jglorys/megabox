@@ -20,3 +20,13 @@
 			</div>
 		</c:forEach>
 </div>
+
+<script>
+$(document).ready(function(){
+	//console.log("영화목록: " + $('.movieList').data('movie-list'));
+	
+	
+});
+	
+
+</script>

@@ -1,8 +1,10 @@
 package com.megabox.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	//실제 저장된 파일과 이미지 패스를 매핑해줌
