@@ -45,30 +45,9 @@
 				alert("비밀번호를 입력해주세요");
 				return false;
 			}	
-				
 			let formData = new FormData();
 			formData.append('loginId', loginId);
 			formData.append('password', password);
-			
-			//해당 아이디 없을 경우
-			$.ajax({
-				type: 'get',
-				url: '/user/is_duplicated_id',
-				data : {'loginId' : loginId},
-				success : function(data) {
-					if (!data.result) {
-						//!data.result => 중복아니다(없는 아이디)
-						alert("존재하지 않는 아이디입니다");
-						location.reload(true);
-					}
-				},
-				error : function(e) {
-					alert("아이디 존재유무 확인에 실패 했습니다. 관리자에게 문의해주세요.")
-				}
-			});
-			
-			// 비밀번호가 일치 하지 않는 경우
-			
 			
 			$.ajax({
 				type: 'post',
@@ -79,6 +58,14 @@
 				success: function(data) {
 					if (data.result == 'success') {
 						location.href = "/main/megabox";
+					} else if (data.result == 'nullUser') {
+						// 해당 아이디 없는 경우
+						alert("존재하지 않는 아이디입니다. 회원가입을 먼저 해주세요.");
+						location.reload();
+					} else if (data.result == 'discord') {
+						// 아이디는 있는데 비밀번호 일치하지 않는 경우
+						alert(" 아이디 또는 비밀번호가 잘못 입력 되었습니다. 아이디와 비밀번호를 정확히 입력해주세요.");
+						location.reload();
 					}
 				},
 				error: function(e) {

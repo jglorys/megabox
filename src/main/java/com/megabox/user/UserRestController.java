@@ -67,20 +67,27 @@ public class UserRestController {
 			HttpServletRequest request
 			) {
 		String encryptPassword = EncryptUtils.md5(password);
-		
-		User user = userBO.getUserByLoginIdAndPassword(loginId, encryptPassword);
-		
 		Map<String, Object> result = new HashMap<>();
-		if (user != null) {
-			result.put("result", "success");
-			
-			// session
-			HttpSession session = request.getSession();
-			session.setAttribute("userId", user.getId());
-			session.setAttribute("userName", user.getName());
-			session.setAttribute("userLoginId", user.getLoginId());
+		
+		// 존재하는 아이디인지 확인 - loginId 중복 여부 DB조회
+		boolean exist = userBO.existLoginId(loginId);
+		if (exist) {
+			// 존재하면 loginId와 password로 user확인 후 로그인
+			User user = userBO.getUserByLoginIdAndPassword(loginId, encryptPassword);
+			if (user != null) {
+				result.put("result", "success");
+				// session
+				HttpSession session = request.getSession();
+				session.setAttribute("userId", user.getId());
+				session.setAttribute("userName", user.getName());
+				session.setAttribute("userLoginId", user.getLoginId());
+			} else {
+				// 아이디는 있는데 비밀번호 일치하지 않는 경우
+				result.put("result", "discord");
+			}
 		} else {
-			result.put("result", "error");
+			// 해당 아이디 없는 경우
+			result.put("result", "nullUser");
 		}
 		return result;
 	}
