@@ -33,6 +33,11 @@ public class UserBO {
 		User user = getUser(userId);
 		int points = user.getPoint();
 		return points;
-		
+	}
+	
+	public void updateUserPoint(int id, int usedPoint) {
+		// update해야할 user의 잔여 point = 원래 포인트 - usedPoint
+		int point = getUserPoint(id) - usedPoint;
+		userDAO.updateUserPoint(id, point);
 	}
 }

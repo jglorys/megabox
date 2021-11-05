@@ -10,16 +10,59 @@
 		,`scheduleId`
 		,`payment`
 		,`usedPoint`
-		,`headcount`
+		, `adult`
+		, `adolescent`
+		, `senior`
 		,`seatLocation`
 		,`createdAt`
  	FROM
  		`reservation`
  	WHERE
  		`scheduleId` = #{scheduleId}
- 	
  	</select>
  
- 
- 
+ 	<insert id="insertReservation" parameterType="com.megabox.reservation.model.Reservation" useGeneratedKeys="true" keyProperty="id">
+ 		INSERT INTO `reservation`
+ 		(
+ 		`userId`
+		, `scheduleId`
+		, `payment`
+		, `usedPoint`
+		, `adult`
+		, `adolescent`
+		, `senior`
+		, `seatLocation`
+		, `createdAt`
+ 		)
+ 		VALUES
+ 		(
+ 		#{userId}
+ 		, #{scheduleId}
+ 		, #{payment}
+ 		, #{usedPoint}
+ 		, #{adult}
+ 		, #{adolescent}
+ 		, #{senior}
+ 		, #{seatLocation}
+ 		, NOW()
+ 		)
+ 	</insert>
+ 	
+ 	<select id="selectReservation" resultType="com.megabox.reservation.model.Reservation" parameterType="int">
+	 	SELECT
+	 		`id`
+			,`userId`
+			,`scheduleId`
+			,`payment`
+			,`usedPoint`
+			, `adult`
+			, `adolescent`
+			, `senior`
+			,`seatLocation`
+			,`createdAt`
+	 	FROM
+	 		`reservation`
+	 	WHERE
+	 		`id` = #{id}
+ 	</select>
  </mapper>

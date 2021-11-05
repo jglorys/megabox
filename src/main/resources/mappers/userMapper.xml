@@ -75,4 +75,14 @@
 		WHERE
 			`id` = #{id}
 	</select>
+	
+	<update id="updateUserPoint" parameterType="map">
+ 		UPDATE `user`
+		SET
+			`point` = #{point}
+			, `updatedAt` = NOW()
+		WHERE
+			`id` = #{id}
+ 	
+ 	</update>
 </mapper>

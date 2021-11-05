@@ -134,6 +134,11 @@
 				$('#confirmUserPassword').val(''); 
 				return;
 			}
+			//중복체크 안했을때
+			if ($('#idCheckOk').hasClass('d-none')) {
+				alert("아이디 중복확인을 해주세요");
+				return;	
+			}
 			
 			//ajax
 			let formData = new FormData();

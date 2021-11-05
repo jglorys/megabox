@@ -42,9 +42,15 @@ public class UserRestController {
 			@RequestParam("yyyymmdd") int yyyymmdd,
 			@RequestParam("phoneNumber") String phoneNumber,
 			@RequestParam("email") String email,
-			@RequestParam("password") String password
+			@RequestParam("password") String password,
+			HttpServletRequest request
 			) {
 		String encryptPassword = EncryptUtils.md5(password);
+		// 회원가입시 만약 로그인된 session 있으면 session제거
+		HttpSession session = request.getSession();
+		session.removeAttribute("userId");
+		session.removeAttribute("userName");
+		session.removeAttribute("userLoginId");
 		
 		// DB insert 
 		userBO.addNewUser(loginId, name, yyyymmdd, phoneNumber, email, encryptPassword);

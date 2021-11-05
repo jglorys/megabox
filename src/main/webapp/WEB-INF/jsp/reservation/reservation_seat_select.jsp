@@ -75,7 +75,7 @@
 			</div>
 			<%-- 선택된 좌석 표시 --%>
 			<div class="d-flex justify-content-center align-items-center m-2 mt-4">
-				<input type="text" class="form-control font-weight-bold" id="seatsLocation" style="border-radius: 1em; height: 120px ;width: 240px;word-break:break-all;">
+				<input type="text" class="form-control font-weight-bold" id="seatsLocation" style="border-radius: 1em; height: 120px ;width: 240px;">
 			</div>
 		</div>
 		<%-- 금액 표시 --%>
@@ -107,8 +107,9 @@ $(document).ready(function(){
 	var senior = 0; //경로 인원 수 
 	var sum = 0; // 전체 선택 인원 수 
 	var seniorAlert = false;
+	var pay = 0; //금액
 	
-	var selectedSeats = ''; // 선택된 좌석 (A1,B2,)
+	var selectedSeats = ''; // 선택된 좌석 (A1,B2)
 	var selectedSeatsCnt = 0; // 선택된 좌석 개수
 	
 	// 인원 수 선택먼저하고 좌석 선택해야함
@@ -139,7 +140,7 @@ $(document).ready(function(){
 		}
 		adult = adultCnt;
 		// 금액 계산
-		var pay = (adult*13000) + (adolescent*10000) + (senior*6000);
+		pay = (adult*13000) + (adolescent*10000) + (senior*6000);
 		var text = '총 관람인원	 ' + sum +'명\n\n';
 		text += '   총 금액	     '+ pay + '원';
 
@@ -173,7 +174,7 @@ $(document).ready(function(){
 		}
 		adolescent = adolescentCnt;
 		// 금액 계산
-		var pay = (adult*13000) + (adolescent*10000) + (senior*6000);
+		pay = (adult*13000) + (adolescent*10000) + (senior*6000);
 		var text = '총 관람인원	 ' + sum +'명\n\n';
 		text += '   총 금액	     '+ pay + '원';
 
@@ -211,7 +212,7 @@ $(document).ready(function(){
 		}
 		senior = seniorCnt;
 		// 금액 계산
-		var pay = (adult*13000) + (adolescent*10000) + (senior*6000);
+		pay = (adult*13000) + (adolescent*10000) + (senior*6000);
 		var text = '총 관람인원	 ' + sum +'명\n\n';
 		text += '   총 금액	     '+ pay + '원';
 
@@ -246,8 +247,6 @@ $(document).ready(function(){
 		let seatsView = selectedSeats.substring(0, selectedSeats.length-1);
 		$('#seatsLocation').val(seatsView);
 		
-		var arrSeats = seatsView.split(",");
-		console.log(arrSeats);
 		console.log('좌석수' + selectedSeatsCnt + '//인원수' + sum);
 	});
 	
@@ -267,7 +266,9 @@ $(document).ready(function(){
 			alert('선택하신 관람 인원과 좌석수가 일치하지 않습니다');
 			return false;
 		}
-		location.href="/reservation/reservation_pay_view?scheduleId=" + scheduleId + "&selectedSeats=" + selectedSeats;
+		
+		location.href="/reservation/reservation_pay_view?scheduleId=" + scheduleId + "&selectedSeats=" + selectedSeats.substring(0, selectedSeats.length-1) +
+				"&adult=" + adult + "&adolescent=" + adolescent + "&senior=" + senior + "&pay=" + pay;
 	});
 });
 </script>

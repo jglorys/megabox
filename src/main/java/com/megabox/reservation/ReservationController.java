@@ -1,6 +1,5 @@
 package com.megabox.reservation;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +16,7 @@ import com.megabox.admin.schedule.bo.ScheduleBO;
 import com.megabox.admin.schedule.model.Schedule;
 import com.megabox.auditorium.bo.AuditoriumBO;
 import com.megabox.reservation.bo.ReservationBO;
+import com.megabox.reservation.model.Reservation;
 import com.megabox.schedule.bo.ScheduleViewBO;
 import com.megabox.schedule.model.ScheduleView;
 import com.megabox.user.bo.UserBO;
@@ -111,6 +111,10 @@ public class ReservationController {
 	public String reservationPayView(Model model,
 								@RequestParam("scheduleId") int scheduleId,
 								@RequestParam("selectedSeats") String selectedSeats,
+								@RequestParam("adult") int adult,
+								@RequestParam("adolescent") int adolescent,
+								@RequestParam("senior") int senior,
+								@RequestParam("pay") int pay,
 								HttpServletRequest request) {
 		//session check
 		HttpSession session = request.getSession();
@@ -122,10 +126,36 @@ public class ReservationController {
 		Schedule schedule = scheduleBO.getSchedule(scheduleId);
 		// userBO로 부터 가용포인트를 가져온다.
 		int userPoints = userBO.getUserPoint(userId);
+
 		model.addAttribute("userPoints", userPoints);
 		model.addAttribute("schedule", schedule);
+		model.addAttribute("pay", pay);
+		model.addAttribute("adult", adult);
+		model.addAttribute("adolescent", adolescent);
+		model.addAttribute("senior", senior);
 		model.addAttribute("selectedSeats", selectedSeats);
 		model.addAttribute("viewName", "reservation/reservation_pay");
 		return "template/layout";
+		
+	}
+	
+	@RequestMapping("/reservation_result_view")
+	public String reservationResultView(Model model,
+									HttpServletRequest request,
+									@RequestParam("reservationId") int reservationId ) {
+		//session check
+		HttpSession session = request.getSession();
+		Integer userId = (Integer) session.getAttribute("userId");	
+		if (userId == null) {
+			//세션에 id가 없으면 로그인 하는 페이지로 보낸다 (redirect)
+			return "redirect:/user/sign_in_view";	
+		}
+		Reservation reservation = reservationBO.getReservation(reservationId);
+		Schedule schedule = scheduleBO.getSchedule(reservation.getScheduleId());
+		model.addAttribute("schedule", schedule);
+		model.addAttribute("reservation", reservation);
+		model.addAttribute("viewName", "reservation/reservation_result");
+		return "template/layout";
+		
 	}
 }

@@ -24,4 +24,8 @@ public interface UserDAO {
 			@Param("password") String password);
 	
 	public User selectUser(int id);
+	
+	public void updateUserPoint(
+			@Param("id") int id, 
+			@Param("point") int point);
 }

@@ -8,7 +8,9 @@ public class Reservation {
 	private int scheduleId;
 	private int payment;
 	private int usedPoint;
-	private int headcount;
+	private int adult;
+	private int adolescent;
+	private int senior;
 	private String seatLocation;
 	private Date createdAt;
 	
@@ -42,11 +44,24 @@ public class Reservation {
 	public void setUsedPoint(int usedPoint) {
 		this.usedPoint = usedPoint;
 	}
-	public int getHeadcount() {
-		return headcount;
+
+	public int getAdult() {
+		return adult;
 	}
-	public void setHeadcount(int headcount) {
-		this.headcount = headcount;
+	public void setAdult(int adult) {
+		this.adult = adult;
+	}
+	public int getAdolescent() {
+		return adolescent;
+	}
+	public void setAdolescent(int adolescent) {
+		this.adolescent = adolescent;
+	}
+	public int getSenior() {
+		return senior;
+	}
+	public void setSenior(int senior) {
+		this.senior = senior;
 	}
 	public String getSeatLocation() {
 		return seatLocation;
