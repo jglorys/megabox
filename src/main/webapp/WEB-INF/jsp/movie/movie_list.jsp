@@ -11,3 +11,8 @@
 	</div>
 	<hr width="700" noshade>
 </div>
+
+<div class="d-flex justify-content-center">
+	<div style="border-radius: 2em; background-color: #380B61;">
+	</div>
+</div>

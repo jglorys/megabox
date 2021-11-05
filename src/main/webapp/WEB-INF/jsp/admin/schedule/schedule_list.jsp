@@ -8,7 +8,7 @@
 <div class="p-5">
 	<div class="d-flex justify-content-between">
 		<h4 class="font-weight-bold">상영시간표</h4>
-		<button type="button" onclick="location.href='/admin/schedule/schedule_create_view' "class="btn text-white" style="background-color: #380B61;">상영시간표 등록</button>
+		<button type="button" onclick="location.href='/admin/schedule/schedule_create_view' "class="btn text-white" style="background-color: #380B61;border-radius: 1em;height: 45px ;width: 150px;">상영시간표 등록</button>
 	</div>
 	
 	<table class="table mt-4 table-hover table-striped">

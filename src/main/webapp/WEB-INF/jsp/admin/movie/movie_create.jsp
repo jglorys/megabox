@@ -3,7 +3,7 @@
 
 <div class="d-flex justify-content-center">
 	<div class="col-6">
-		<button type="button" class="btn btn-secondary mb-4" onclick="location.href='/admin/movie/movie_list_view'">등록취소</button>
+		<button type="button" class="btn btn-secondary mb-4" onclick="location.href='/admin/movie/movie_list_view'" style="border-radius: 1em;height: 40px ;width: 110px;">등록취소</button>
 		<table class="table table-striped w-75 ml-5 mt-2">
 			<tbody class="text-center">
 				<tr>
@@ -94,7 +94,7 @@
 		</div>
 		<br>
 		<div class="d-flex justify-content-center">
-			<button type="button" id="movieUploadBtn" class="btn text-white" style="background-color: #380B61;">영화 등록</button>
+			<button type="button" id="movieUploadBtn" class="btn text-white" style="background-color: #380B61;border-radius: 1em;height: 45px ;width: 150px;">영화 등록</button>
 		</div>
 	</div>
 

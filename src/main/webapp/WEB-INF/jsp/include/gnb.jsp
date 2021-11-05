@@ -52,10 +52,10 @@
 <!-- SITEMAP Modal -->
 <div class="modal fade" id="moreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-    	<div class="modal-body">
-    		<h4 class="modal-title">SITE MAP</h4>
-    		<table class="table mt-4 table-striped">
+    <div class="modal-content" style="border-radius: 2em; background-color: #380B61;">
+    	<div class="modal-body" style="height:500px;">
+    		<h4 class="modal-title text-white">SITE MAP</h4>
+    		<table class="table mt-4">
 				<thead class="text-center">
 					<tr class="bg-light">
 						<th>영화</th>
@@ -66,27 +66,27 @@
 						
 					</tr>
 				</thead>
-				<tbody class="text-center">
-					<tr>
-						<td><a href="/movie/movie_list_view" class="font-weight-bold" style="color: black; text-decoration:none">전체영화</a></td>
-						<td><a href="/schedule/movie_schedule_select_view" class="font-weight-bold" style="color: black; text-decoration:none">상영시간표</a></td>
-						<td><a href="/event/present_event_view" class="font-weight-bold" style="color: black; text-decoration:none">진행중 이벤트</a></td>
-						<td><a href="#" class="font-weight-bold" style="color: black; text-decoration:none">팝콘/음료/굿즈</a></td>
-						<td><a href="/user/reservation_list_view" class="font-weight-bold" style="color: black; text-decoration:none">예매/구매내역</a></td>
+				<tbody>
+					<tr class="text-center">
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/movie/movie_list_view" style="color: white; text-decoration:none">전체영화</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/schedule/movie_schedule_select_view" style="color: white;text-decoration:none">상영시간표</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/event/present_event_view" style="color: white; text-decoration:none">진행중 이벤트</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="#" style="color: white; text-decoration:none">팝콘/음료/굿즈</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/reservation_list_view" style="color: white; text-decoration:none">예매/구매내역</a></td>
 					</tr>
-					<tr>
-						<td><a href="#" class="font-weight-bold" style="color: black; text-decoration:none">무비포스트</a></td>
-						<td><a href="/reservation/reservation_date_select_view" class="font-weight-bold" style="color: black; text-decoration:none">예매하기</a></td>
-						<td><a href="/event/past_event_view" class="font-weight-bold" style="color: black; text-decoration:none">지난 이벤트</a></td>
-						<td></td>
-						<td><a href="/user/point_view" class="font-weight-bold" style="color: black; text-decoration:none">멤버십포인트</a></td>
+					<tr class="text-center">
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="#"  style="color: white; text-decoration:none">무비포스트</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/reservation/reservation_date_select_view"  style="color: white; text-decoration:none">예매하기</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/event/past_event_view"  style="color: white; text-decoration:none">지난 이벤트</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/point_view"  style="color: white;text-decoration:none">멤버십포인트</a></td>
 					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="/user/user_update_view" class="font-weight-bold" style="color: black; text-decoration:none">회원정보 수정</a></td>
+					<tr class="text-center">
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/user_update_view" style="color: white; text-decoration:none">회원정보 수정</a></td>
 					</tr>
 					
     			</tbody>

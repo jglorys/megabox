@@ -3,7 +3,7 @@
 
 <div class="d-flex justify-content-center">
 	<div class="col-6">
-		<button type="button" class="btn btn-secondary mb-4" onclick="location.href='/admin/movie/movie_list_view'">목록으로</button>
+		<button type="button" class="btn btn-secondary mb-4" onclick="location.href='/admin/movie/movie_list_view'" style="border-radius: 1em;height: 40px ;width: 110px;">목록으로</button>
 		<table class="table table-striped w-75 ml-5 mt-2">
 			<tbody class="text-center">
 				<tr>
@@ -77,17 +77,17 @@
 			<img src="${movie.posterImage}" alt="포스터 이미지" width="300px">
 			<%-- <input type="file" id="posterImgFile" accept=".jpg, .jpeg, .png, .gif" class="btn btn-primary">--%>
 		</div>
-		<br><br><br>
+		<br><br>
 		<%-- 영화 설명 --%>
-		<div class="m-2 h-25">
+		<div class="m-2">
 			<textarea id="movieIntroduction" rows="4" cols="10" class="form-control">${movie.introduction}</textarea>
-		</div>
-		<div class="d-flex justify-content-center">
-			<button type="button" id="movieUpdateBtn" class="btn text-white" style="background-color: #380B61;">수정 완료</button>
+		</div><br>
+		<div class="d-flex justify-content-center mb-5">
+			<button type="button" id="movieUpdateBtn" class="btn text-white" style="background-color: #380B61; border-radius: 1em;height: 50px ;width: 120px;">수정 완료</button>
 		</div>
 	</div>
-
 </div>
+<div class="w-100" style="height: 50px ;"></div>
 
 <script>
 $(document).ready(function(){
@@ -132,7 +132,7 @@ $(document).ready(function(){
 			contentType: false,
 			success: function(data) {
 				alert("영화 수정이 완료되었습니다");
-				location.reload();
+				location.href = "/admin/movie/movie_list_view";
 			},
 			error: function(e) {
 				alert("영화 수정에 실패했습니다." + e);

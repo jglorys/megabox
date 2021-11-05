@@ -13,7 +13,7 @@
 		
 		<c:forEach items="${movieList}" var="movie" begin="0" end="3">
 			<div class="col-3">
-				<div>
+				<div class="d-flex justify-content-center">
 						<img src="${movie.posterImage}" width="220px">
 				</div>
 				<div class="d-flex justify-content-center">

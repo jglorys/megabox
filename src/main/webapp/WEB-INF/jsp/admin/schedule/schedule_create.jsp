@@ -5,7 +5,7 @@
 
 <div>
 	<div class="d-flex justify-content-start">
-		<button type="button" class="btn btn-secondary mb-4" onclick="location.href='/admin/schedule/schedule_list_view'">등록취소</button>
+		<button type="button" class="btn btn-secondary mb-4" onclick="location.href='/admin/schedule/schedule_list_view'" style="border-radius: 1em;height: 40px ;width: 110px;">등록취소</button>
 	</div>
 	<div class="d-flex justify-content-center">
 		<table class="table table-striped w-75 ml-5 mt-2">
@@ -42,7 +42,7 @@
 		</table>
 	</div>
 	<div class="d-flex justify-content-center mt-5">
-		<button type="button" id="scheduleUploadBtn" class="btn text-white" style="background-color: #380B61;">상영시간표 등록</button>
+		<button type="button" id="scheduleUploadBtn" class="btn text-white" style="background-color: #380B61; border-radius: 1em;height: 50px ;width: 150px;">상영시간표 등록</button>
 	</div>
 </div>		
 
