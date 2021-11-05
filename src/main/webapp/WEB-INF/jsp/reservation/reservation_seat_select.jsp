@@ -43,16 +43,20 @@
 		<div class="d-flex justify-content-center">
 			<div id="reservedSeats" data-reserved-seats="${reservedSeats}">
 			<c:set var="row">A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T</c:set>
-			<c:forEach var="i" begin="0" end="${seatCount/10 -1}" items="${row}">
+			<c:forEach var="i" begin="0" end="${seatCount/10 - 1}" items="${row}">
 				<div class="mb-1">
 					<button type="button" class="btn btn-light mr-3 font-weight-bold" style="width: 50px; background-color:#FBFBEF;">${i}</button>
 					<c:forEach var="j" begin="1" end="10">
-						<c:set var="sd" value="${reservedSeats}"/>
-						<%-- 이미 예매완료된 좌석일 경우 ${fn:substring(schedule.time,10,12)}--%>
-						<c:if test="">
-							<button type="button" class="btn seatBtn" style="width: 50px;" data-seat-row="${i}" data-seat-col="${j}">${j}</button>
-						</c:if>
-						<button type="button" class="btn seatBtn" style="width: 50px;" data-seat-row="${i}" data-seat-col="${j}">${j}</button>
+							<%-- 이미 예매완료된 좌석일 경우--%>
+							<c:set var="thisSeat" value="${i}${j}"/>
+							<c:choose> 
+								<c:when test="${fn:contains(reservedSeats, thisSeat)}">
+									<button type="button" class="btn seatBtn bg-secondary" style="width: 50px;" data-seat-row="${i}" data-seat-col="${j}" disabled>${j}</button>
+								</c:when> 
+								<c:otherwise>
+									<button type="button" class="btn seatBtn" style="width: 50px;" data-seat-row="${i}" data-seat-col="${j}">${j}</button>
+								</c:otherwise> 
+							</c:choose>
 					</c:forEach>
 					<br>
 				</div>
@@ -100,6 +104,7 @@ $(document).ready(function(){
 	// 예매 완료된 좌석
 	var reservedSeats = $('#reservedSeats').data('reserved-seats');
 	console.log("예매완료된 좌석 : " + reservedSeats);
+	console.log("ij : " + $('#ij').data('i-j'));
 
 	// 청소년관람불가인 경우 안내문구
 	var viewingClass = $('#viewingClass').data('viewing-class');

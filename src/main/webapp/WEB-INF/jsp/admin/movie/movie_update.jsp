@@ -73,8 +73,8 @@
 	<div class="col-6">
 		<br><br>
 		<%-- 영화포스터 업로드 div --%>
-		<div class="d-flex justify-content-around mt-5">
-			<img src="${movie.posterImage}" alt="포스터 이미지">
+		<div class="d-flex justify-content-around">
+			<img src="${movie.posterImage}" alt="포스터 이미지" width="300px">
 			<%-- <input type="file" id="posterImgFile" accept=".jpg, .jpeg, .png, .gif" class="btn btn-primary">--%>
 		</div>
 		<br><br><br>
@@ -82,7 +82,6 @@
 		<div class="m-2 h-25">
 			<textarea id="movieIntroduction" rows="4" cols="10" class="form-control">${movie.introduction}</textarea>
 		</div>
-		<br>
 		<div class="d-flex justify-content-center">
 			<button type="button" id="movieUpdateBtn" class="btn text-white" style="background-color: #380B61;">수정 완료</button>
 		</div>

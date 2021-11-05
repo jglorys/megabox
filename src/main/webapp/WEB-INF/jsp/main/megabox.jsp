@@ -3,20 +3,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- JSTL Core태그 --%>
 
-<div class="d-flex justify-content-center pt-5">
+<div class="d-flex justify-content-center pt-5 mb-4">
 	<b>박스오피스</b>
 </div>
 <hr width="120" noshade>
 
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center mt-5">
 		<%-- 포스터 이미지 --%>
 		
-		<c:forEach items="${movieList}" var="movie">
+		<c:forEach items="${movieList}" var="movie" begin="0" end="3">
 			<div class="col-3">
 				<div>
-						<img src="${movie.posterImage}" class="w-100">
+						<img src="${movie.posterImage}" width="220px">
 				</div>
-				<button type="button" class="btn text-white" style="background-color: #380B61;">예매</button>
+				<div class="d-flex justify-content-center">
+					<button type="button" class="btn text-white mt-2 p-1" style="border-radius: 1em;height: 40px ;width: 100px;background-color: #380B61;" onclick="location.href='/schedule/movie_schedule_view?movieId='+ ${movie.id} ">예매</button>
+				</div>
 			</div>
 		</c:forEach>
 </div>

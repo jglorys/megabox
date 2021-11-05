@@ -1,6 +1,7 @@
 package com.megabox.reservation.bo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class ReservationBO {
 		return reservationList;
 	}
 	
-	public List<String> getReservedSeats(int scheduleId) {
+	public String getReservedSeats(int scheduleId) {
 		String reservedSeats = "";
 		// 해당 스케줄의 예약 목록 다 가져온다
 		List<Reservation> reservationList = getReservationListByScheduleId(scheduleId);
@@ -48,10 +49,15 @@ public class ReservationBO {
 		for (Reservation reservation : reservationList) {
 			reservedSeats += reservation.getSeatLocation() + ",";
 		}
+//		reservedSeats = reservedSeats.substring(0, reservedSeats.length()-1);
+//		String[] seartArr = reservedSeats.split(",");
+//		List<String> reservedSeatsList = Arrays.asList(seartArr);
+		if (reservedSeats == "") {
+			return "0";
+		}
 		reservedSeats = reservedSeats.substring(0, reservedSeats.length()-1);
-		List<String> reservedSeatsList = new ArrayList<>();
-				//reservedSeats.split(",");
-		return reservedSeatsList;
+		
+		return reservedSeats;
 	}
 	
 	public int addReservation(int userId, int scheduleId, int payment, int usedPoint, int adult, int adolescent, int senior, String seatLocation) {
