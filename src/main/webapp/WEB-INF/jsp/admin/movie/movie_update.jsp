@@ -131,8 +131,10 @@ $(document).ready(function(){
 			processData: false,	// 파일 업로드 필수 설정
 			contentType: false,
 			success: function(data) {
-				alert("영화 수정이 완료되었습니다");
-				location.href = "/admin/movie/movie_list_view";
+				if (data.result == 'success') {
+					alert("영화 수정이 완료되었습니다");
+					location.href = "/admin/movie/movie_list_view";	
+				}
 			},
 			error: function(e) {
 				alert("영화 수정에 실패했습니다." + e);

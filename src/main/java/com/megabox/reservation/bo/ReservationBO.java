@@ -83,5 +83,12 @@ public class ReservationBO {
 		return reservationDAO.selectReservation(id);
 	}
 
-
+	public List<Reservation> getReservationListByUserId (int userId) {
+		List<Reservation> reservationList = reservationDAO.selectReservationListByUserId(userId);
+		return reservationList;
+	}
+	
+	public void deleteReservation (int id) {
+		reservationDAO.deleteReservation(id);
+	}
 }

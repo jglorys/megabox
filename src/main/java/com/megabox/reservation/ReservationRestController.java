@@ -40,7 +40,6 @@ public class ReservationRestController {
 	HttpSession session = request.getSession();
 	Integer userId = (Integer) session.getAttribute("userId");
 	if (userId == null) {
-		//세션에 id가 없으면 로그인 하는 페이지로 보낸다 (redirect)
 		logger.info("[/reservation/insert] session 없음");
 		result.put("result", "error");
 		return result;
@@ -50,5 +49,23 @@ public class ReservationRestController {
 	result.put("result", "success");
 	result.put("reservationId", reservationId);
 	return result;
+	}
+	
+	@PostMapping("/delete")
+	public Map<String, Object> deleteReservation(
+									HttpServletRequest request,
+									@RequestParam("reservationId") int reservationId) {
+		HttpSession session = request.getSession();
+		Map<String, Object> result = new HashMap<>();
+		Integer userId = (Integer) session.getAttribute("userId");
+		if (userId == null) {
+			logger.info("[/reservation/delete] session 없음");
+			result.put("result", "error");
+			return result;
+		}
+		reservationBO.deleteReservation(reservationId);
+		result.put("result", "success");
+		return result;
+	
 	}
 }

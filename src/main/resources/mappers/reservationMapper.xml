@@ -65,4 +65,30 @@
 	 	WHERE
 	 		`id` = #{id}
  	</select>
+ 	
+ 	<select id="selectReservationListByUserId" resultType="com.megabox.reservation.model.Reservation" parameterType="int">
+ 		SELECT
+	 		`id`
+			,`userId`
+			,`scheduleId`
+			,`payment`
+			,`usedPoint`
+			, `adult`
+			, `adolescent`
+			, `senior`
+			,`seatLocation`
+			,`createdAt`
+	 	FROM
+	 		`reservation`
+	 	WHERE
+	 		`userId` = #{userId}
+ 	</select>
+ 	
+ 	<delete id="deleteReservation" parameterType="int">
+ 		DELETE 
+		FROM 
+			`reservation`
+		WHERE
+			`id` = #{id}
+ 	</delete>
  </mapper>

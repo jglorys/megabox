@@ -49,7 +49,7 @@
 $(document).ready(function(){
 	var originChargeMoney = $('#pay').data('origin-pay');
 	var userPoints = $('#userPoints').data('user-point');
-	var realChargeMoney = 0; //실 결제 금액
+	var realChargeMoney = originChargeMoney; //실 결제 금액
 	var usedPoints = 0; //포인트 사용 금액
 	$('#realPay').val('총 결제금액 : ' + originChargeMoney);
 	

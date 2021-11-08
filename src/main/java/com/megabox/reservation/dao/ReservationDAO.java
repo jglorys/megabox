@@ -15,4 +15,7 @@ public interface ReservationDAO {
 	
 	public Reservation selectReservation (int id);
 	
+	public List<Reservation> selectReservationListByUserId (int userId);
+	
+	public void deleteReservation (int id);
 }
