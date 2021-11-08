@@ -13,7 +13,7 @@
 		</div>
 		
 		<div class="h-50 d-flex align-items-end justify-content-around">
-			<a href="#" class="site-map-btn" data-toggle="modal" data-target="#moreModal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" width="30" height="30"></a>
+			<a href="#" class="site-map-btn" data-toggle="modal" data-target="#siteMapModal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" width="30" height="30"></a>
 			<a href="/movie/movie_list_view" class="gnb-txt-movie"><img alt="gnb movie" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-movie.png"></a>
 			<a href="/schedule/movie_schedule_select_view" class="gnb-txt-reservation"><img alt="gnb reservation" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-reserve.png"></a>
 		</div>
@@ -50,10 +50,10 @@
 <hr width="1200" noshade>
 
 <!-- SITEMAP Modal -->
-<div class="modal fade" id="moreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content" style="border-radius: 2em; background-color: #380B61;">
-    	<div class="modal-body" style="height:500px;">
+<div class="modal fade" id="siteMapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 2em; background-color: #380B61; height:600px;">
+    	<div class="modal-body">
     		<h4 class="modal-title text-white">SITE MAP</h4>
     		<table class="table mt-4">
 				<thead class="text-center">

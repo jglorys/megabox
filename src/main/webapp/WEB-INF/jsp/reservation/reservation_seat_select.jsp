@@ -47,9 +47,9 @@
 				<div class="mb-1">
 					<button type="button" class="btn btn-light mr-3 font-weight-bold" style="width: 50px; background-color:#FBFBEF;">${i}</button>
 					<c:forEach var="j" begin="1" end="10">
-							<%-- 이미 예매완료된 좌석일 경우--%>
 							<c:set var="thisSeat" value="${i}${j}"/>
 							<c:choose> 
+								<%-- 이미 예매완료된 좌석일 경우--%>
 								<c:when test="${fn:contains(reservedSeats, thisSeat)}">
 									<button type="button" class="btn seatBtn bg-secondary" style="width: 50px;" data-seat-row="${i}" data-seat-col="${j}" disabled>${j}</button>
 								</c:when> 
@@ -84,12 +84,12 @@
 			</div>
 			<%-- 선택된 좌석 표시 --%>
 			<div class="d-flex justify-content-center align-items-center m-2 mt-4">
-				<input type="text" class="form-control font-weight-bold" id="seatsLocation" style="border-radius: 1em; height: 120px ;width: 240px;">
+				<input type="text" class="font-weight-bold" id="seatsLocation" style="border-radius: 1em; height: 120px ;width: 240px;background-color:#fff;" disabled>
 			</div>
 		</div>
 		<%-- 금액 표시 --%>
 		<div class="d-flex justify-content-center align-items-center m-2">
-			 <textarea rows="3" cols="12" class="form-control font-weight-bold mt-3" id="chargeAccount" style="border-radius: 1em; height: 90px; border:0 solid black;"></textarea>
+			 <textarea class="font-weight-bold mt-3 ml-5" id="chargeAccount" style="width:200px; border-radius: 1em; height: 90px; border:0 solid black; resize: none;" disabled></textarea>
 		</div>
 		<%-- 결제하기 버튼 --%>
 		<div class="d-flex justify-content-end mt-1">
@@ -156,7 +156,7 @@ $(document).ready(function(){
 		// 금액 계산
 		pay = (adult*13000) + (adolescent*10000) + (senior*6000);
 		var text = '총 관람인원	 ' + sum +'명\n\n';
-		text += '   총 금액	     '+ pay + '원';
+		text += '총 금액	     '+ pay + '원';
 
 		$('#chargeAccount').val(text);
 		
@@ -190,7 +190,7 @@ $(document).ready(function(){
 		// 금액 계산
 		pay = (adult*13000) + (adolescent*10000) + (senior*6000);
 		var text = '총 관람인원	 ' + sum +'명\n\n';
-		text += '   총 금액	     '+ pay + '원';
+		text += '총 금액	     '+ pay + '원';
 
 		$('#chargeAccount').val(text);	
 	});
@@ -228,7 +228,7 @@ $(document).ready(function(){
 		// 금액 계산
 		pay = (adult*13000) + (adolescent*10000) + (senior*6000);
 		var text = '총 관람인원	 ' + sum +'명\n\n';
-		text += '   총 금액	     '+ pay + '원';
+		text += '총 금액	     '+ pay + '원';
 
 		$('#chargeAccount').val(text);
 
@@ -241,9 +241,9 @@ $(document).ready(function(){
 		//alert(seatRow + seatCol);
 		let seat = seatRow + seatCol + ',';
 
-		if ($(this).hasClass("btn-secondary") == true) {
+		if ($(this).hasClass("btn-dark") == true) {
 			// 이미 선택된 좌석일 경우
-			$(this).removeClass("btn-secondary");
+			$(this).removeClass("btn-dark");
 			selectedSeats = selectedSeats.replace(seat, '');
 			selectedSeatsCnt--;
 		} else {
@@ -253,7 +253,7 @@ $(document).ready(function(){
 				console.log('좌석수' + selectedSeatsCnt + '//인원수' + sum);
 				return;			
 			}
-			$(this).addClass("btn-secondary");
+			$(this).addClass("btn-dark");
 			selectedSeats += seat;
 			selectedSeatsCnt++;
 		}

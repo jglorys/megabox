@@ -14,7 +14,7 @@
 		<c:forEach items="${movieList}" var="movie" begin="0" end="3">
 			<div class="col-3">
 				<div class="d-flex justify-content-center">
-						<img src="${movie.posterImage}" width="220px">
+						<img src="${movie.posterImage}" width="220px" style="border-radius: 1em;">
 				</div>
 				<div class="d-flex justify-content-center">
 					<button type="button" class="btn text-white mt-2 p-1" style="border-radius: 1em;height: 40px ;width: 100px;background-color: #380B61;" onclick="location.href='/schedule/movie_schedule_view?movieId='+ ${movie.id} ">예매</button>

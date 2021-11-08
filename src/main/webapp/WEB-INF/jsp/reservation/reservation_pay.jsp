@@ -32,7 +32,7 @@
 	</div>
 	
 	<div class="col-4 mt-4">
-		<input type="text" id="realPay" readonly class="mt-4" style="border-radius: 1em; height: 50px ;width: 350px; border:0 solid black; font-size:22pt">
+		<input type="text" id="realPay" readonly class="mt-4" style="border-radius: 1em; height: 50px ;width: 350px; border:0 solid black; font-size:22pt" disabled>
 	</div>
 </div>
 
