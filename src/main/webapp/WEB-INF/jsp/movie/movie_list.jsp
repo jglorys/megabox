@@ -44,16 +44,11 @@
     <div class="modal-content" style="border-radius: 2em; background: rgba(0, 0, 0, 0.9); height:700px;">
     	<div class="modal-body d-flex">
     		<div class="w-50">
-    			<input type="image" src="" id="moviePosterImage" style="border-radius: 1em;">
+    			<input type="text" id="movieTitle" class="mt-2 font-weight-bold text-center" style="color:#fff; font-size:30px;border-radius: 1em; height: 40px; width:370px;border: none; background: transparent;" disabled>
+    			<img src=""  id="moviePosterImage" class="mt-5" width="380px" style="border-radius: 1em;">
     		</div>
     		<table class="w-50" style="border-radius: 1em; background: #fff;">
 				<tbody class="text-center">
-					<tr>
-						<th class="bg-light">제목</th>
-						<td>
-							<input type="text" id="movieTitle" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
-						</td>
-					</tr>
 					<tr>
 						<th class="bg-light">감독</th>
 						<td>
@@ -101,7 +96,7 @@
 					<tr>
 						<th class="bg-light">설명</th>
 						<td>
-							<textarea id="movieIntroduction" class="font-weight-bold" style="text-color:#000;border-radius: 1em; width:300px;height: 120px;border: none; background: transparent;resize: none;" disabled></textarea>
+							<textarea id="movieIntroduction" class="font-weight-bold" style="text-color:#000;border-radius: 1em; width:300px;height: 160px;border: none; background: transparent;resize: none;" disabled></textarea>
 						</td>
 					<tr>
 					</tr>
@@ -138,7 +133,7 @@ $(document).ready(function(){
 		$('#movieRunningTime').val(movieRunningTime);
 		$('#movieViewingClass').val(movieViewingClass);
 		$('#movieIntroduction').val(movieIntroduction);
-		$('#moviePosterImage').val(moviePosterImage);
+		document.getElementById( 'moviePosterImage' ).setAttribute( 'src', moviePosterImage);
 		
 	});
 	
