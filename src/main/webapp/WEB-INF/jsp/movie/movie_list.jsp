@@ -41,34 +41,39 @@
 <!-- movieDetail Modal -->
 <div class="modal fade" id="movieDetaliModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content" style="border-radius: 2em; background: rgba(0, 0, 0, 0.9); height:700px;">
-    	<div class="modal-body d-flex">
+    <div class="modal-content" style="border-radius: 2em; background: rgba(0, 0, 0, 0.9); width:900px; height:700px;">
+    	<div class="modal-body d-flex"  style="width:900px; height:700px;">
     		<div class="w-50">
-    			<input type="text" id="movieTitle" class="mt-5 text-center" style="color:#fff; font-size:30px;border-radius: 1em; height: 40px; width:370px;border: none; background: transparent;" disabled>
-    			<img src=""  id="moviePosterImage" class="mt-5" width="380px" style="border-radius: 1em;">
+    			<img src=""  id="moviePosterImage" class="mt-4" height="600px" style="border-radius: 1em;">
     		</div>
-    		<table class="w-50" style="border-radius: 1em; background-color: #BDBDBD;">
+    		<table class="w-50" style="border-radius: 1em; background-color: #F2F2F2;">
 				<tbody class="text-center">
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">감독</th>
+						<th style="border-radius: 1em;">제목</th>
+						<td>
+							<input type="text" id="movieTitle" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
+						</td>
+					</tr>
+					<tr>
+						<th style="border-radius: 1em;">감독</th>
 						<td>
 							<input type="text" id="movieDirector" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
 						</td>
 					</tr>
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">개봉</th>
+						<th style="border-radius: 1em;">개봉</th>
 						<td>
 							<input type="text" id="movieReleasedDate" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
 						</td>
 					</tr>
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">장르</th>
+						<th style="border-radius: 1em;">장르</th>
 						<td>
 							<input type="text" id="movieGenre" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
 						</td>
 					</tr>
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">출연</th>
+						<th style="border-radius: 1em;">출연</th>
 						<td>
 							<textarea id="movieActor" class="font-weight-bold" style="text-color:#000;border-radius: 1em; width:250px;border: none; background: transparent; resize: none;" disabled></textarea>
 							<%--<input type="text" id="movieActor" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
@@ -76,25 +81,25 @@
 						</td>
 					</tr>
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">평점</th>
+						<th style="border-radius: 1em;">평점</th>
 						<td>
 							<input type="text" id="movieRating" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
 						</td>
 					</tr>
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">상영시간</th>
+						<th style="border-radius: 1em;">상영시간</th>
 						<td>
 							<input type="text" id="movieRunningTime" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
 						</td>
 					</tr>
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">관람등급</th>
+						<th style="border-radius: 1em;">관람등급</th>
 						<td>
 							<input type="text" id="movieViewingClass" class="font-weight-bold" style="text-color:#000;border-radius: 1em; height: 20px;border: none; background: transparent;" disabled>
 						</td>
 					</tr>
 					<tr>
-						<th style="border-radius: 1em; background-color: #BDBDBD;">설명</th>
+						<th style="border-radius: 1em;">설명</th>
 						<td>
 							<textarea id="movieIntroduction" class="font-weight-bold" style="text-color:#000;border-radius: 1em; width:300px;height: 160px;border: none; background: transparent;resize: none;" disabled></textarea>
 						</td>

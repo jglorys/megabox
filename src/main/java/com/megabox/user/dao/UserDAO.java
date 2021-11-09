@@ -10,14 +10,7 @@ public interface UserDAO {
 	
 	public boolean existLoginId(String loginId);
 	
-	public void insertNewUser(
-			@Param("loginId") String loginId,
-			@Param("name") String name,
-			@Param("yyyymmdd") int yyyymmdd,
-			@Param("phoneNumber") String phoneNumber,
-			@Param("email") String email,
-			@Param("password") String password,
-			@Param("point") int point);
+	public void insertNewUser(User user);
 	
 	public User selectUserByLoginIdAndPassword(
 			@Param("loginId") String loginId, 

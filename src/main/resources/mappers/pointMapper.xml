@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.megabox.point.dao.PointDAO">
+ 	<insert id="insertPointByReservation" parameterType="map">
+ 		INSERT INTO `point`
+ 		(
+ 		`userId`
+		,`reservationId`
+		,`history`
+		,`plusMinus`
+		,`changePoint`
+		,`createdAt`
+ 		)
+ 		VALUES
+ 		(
+ 		#{userId}
+ 		, #{reservationId}
+ 		, #{history}
+ 		, #{plusMinus}
+ 		, #{changePoint}
+ 		, NOW()
+ 		)
+ 	</insert>
+ 	<delete id="deletePointByReservation" parameterType="map">
+ 		DELETE 
+		FROM 
+			`point`
+		WHERE
+			`userId` = #{userId}
+		AND `reservationId` = #{reservationId}
+ 	</delete>
+ 	<select id="selectPointListByUserId" resultType="com.megabox.point.model.Point" parameterType="int">
+ 		SELECT
+ 			`id`
+ 			,`userId`
+			,`reservationId`
+			,`storeId`
+			,`history`
+			,`plusMinus`
+			,`changePoint`
+			,`createdAt`
+ 		FROM 
+ 			`point`
+ 		WHERE `userId` = #{userId}
+ 	</select>
+ 	 <insert id="insertPoint" parameterType="map">
+ 		INSERT INTO `point`
+ 		(
+ 		`userId`
+		,`history`
+		,`plusMinus`
+		,`changePoint`
+		,`createdAt`
+ 		)
+ 		VALUES
+ 		(
+ 		#{userId}
+ 		, #{history}
+ 		, #{plusMinus}
+ 		, #{changePoint}
+ 		, NOW()
+ 		)
+ 	</insert>
+</mapper>

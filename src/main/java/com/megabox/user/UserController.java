@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.megabox.point.bo.PointBO;
+import com.megabox.point.model.Point;
 import com.megabox.reservation.bo.ReservationScheduleBO;
 import com.megabox.reservation.model.ReservationSchedule;
 import com.megabox.user.bo.UserBO;
@@ -25,6 +27,8 @@ public class UserController {
 	@Autowired
 	private ReservationScheduleBO reservationScheduleBO;
 	
+	@Autowired
+	private PointBO pointBO;
 	
 	@RequestMapping("/sign_in_view")
 	public String signIn(Model model) {
@@ -76,6 +80,8 @@ public class UserController {
 			return "redirect:/user/sign_in_view";
 		}
 		User user = userBO.getUser(userId);
+		List<Point> pointList = pointBO.getPointListByUserId(userId);
+		model.addAttribute("pointList", pointList);
 		model.addAttribute("user", user);
 		model.addAttribute("viewName", "user/point");
 		return "template/layout";

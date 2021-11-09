@@ -12,7 +12,7 @@
 			`loginId` = #{loginId}
 	</select>
 	
-	<insert id="insertNewUser" parameterType="map">
+	<insert id="insertNewUser" parameterType="com.megabox.user.model.User" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO `user`
 		(	
 			`loginId`

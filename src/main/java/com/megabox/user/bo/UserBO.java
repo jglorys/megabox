@@ -3,6 +3,7 @@ package com.megabox.user.bo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.megabox.point.bo.PointBO;
 import com.megabox.user.dao.UserDAO;
 import com.megabox.user.model.User;
 
@@ -12,13 +13,29 @@ public class UserBO {
 	@Autowired
 	private UserDAO userDAO;
 	
+	@Autowired
+	private PointBO pointBO;
+	
 	public boolean existLoginId(String loginId) {
 		return userDAO.existLoginId(loginId);
 	}
 	
 	public void addNewUser(String loginId, String name, int yyyymmdd, String phoneNumber, String email, String encryptPassword) {
 		int newUserPoint = 2000;
-		userDAO.insertNewUser(loginId, name, yyyymmdd, phoneNumber, email, encryptPassword, newUserPoint);
+		User user = new User();
+		user.setLoginId(loginId);
+		user.setName(name);
+		user.setYyyymmdd(yyyymmdd);
+		user.setPhoneNumber(phoneNumber);
+		user.setEmail(email);
+		user.setPassword(encryptPassword);
+		user.setPoint(newUserPoint);
+		userDAO.insertNewUser(user);
+		//새로운 user에게 point줬으므로 point 테이블에도 저장
+		int userId = user.getId();
+		String history = "신규회원 포인트 적립";
+		pointBO.addPoint(userId, history, "+", newUserPoint);
+		
 	}
 	
 	public User getUserByLoginIdAndPassword(String loginId, String password) {
@@ -35,9 +52,7 @@ public class UserBO {
 		return points;
 	}
 	
-	public void updateUserPoint(int id, int usedPoint) {
-		// update해야할 user의 잔여 point = 원래 포인트 - usedPoint
-		int point = getUserPoint(id) - usedPoint;
+	public void updateUserPoint(int id, int point) {
 		userDAO.updateUserPoint(id, point);
 	}
 }

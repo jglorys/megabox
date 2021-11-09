@@ -1,15 +1,16 @@
 package com.megabox.reservation.bo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.megabox.point.bo.PointBO;
 import com.megabox.reservation.dao.ReservationDAO;
 import com.megabox.reservation.model.Reservation;
 import com.megabox.user.bo.UserBO;
+import com.megabox.user.model.User;
 
 @Service
 public class ReservationBO {
@@ -19,6 +20,9 @@ public class ReservationBO {
 	
 	@Autowired
 	private UserBO userBO;
+	
+	@Autowired
+	private PointBO pointBO;
 	
 	public int getHeadcountByScheduleId(int scheduleId) {
 		// reservation테이블에서 해당 스케줄의 headcount 다 더한다.
@@ -74,7 +78,13 @@ public class ReservationBO {
 		reservationDAO.insertReservation(reservation);
 		int reservationId = reservation.getId();
 		// 사용 포인트만큼 User의 point 차감해야 한다
-		userBO.updateUserPoint(userId, usedPoint);
+		// update해야할 user의 잔여 point = 원래 포인트 - usedPoint
+		User user = userBO.getUser(userId);
+		int point = user.getPoint() - usedPoint;
+		userBO.updateUserPoint(userId, point);
+		// PointBO에서 Point테이블에 해당 reservationId로 insert
+		String history = "영화예매";
+		pointBO.addPointByReservation(userId, reservationId, history, "-", usedPoint);
 		// 추가된 해당 reservationId 리턴 (가장 마지막에 추가된 것임)
 		return reservationId;
 	}
@@ -89,6 +99,16 @@ public class ReservationBO {
 	}
 	
 	public void deleteReservation (int id) {
+		// 포인트 차감했던거 복원
+		Reservation reservation = getReservation(id);
+		User user = userBO.getUser(reservation.getUserId());
+		int usedPoint = reservation.getUsedPoint(); //사용했던 포인트
+		int prevPoint = user.getPoint() + usedPoint; //다시 user객체에 set
+		userBO.updateUserPoint(user.getId(), prevPoint);
+		// PointBO에서 해당 reservationId에 해당하는거 찾아서 지우기
+		pointBO.deletePointByReservation(user.getId(), reservation.getId());
+		// id에 해당하는 reservation 삭제
 		reservationDAO.deleteReservation(id);
+		
 	}
 }

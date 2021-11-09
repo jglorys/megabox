@@ -24,27 +24,27 @@
  	<insert id="insertReservation" parameterType="com.megabox.reservation.model.Reservation" useGeneratedKeys="true" keyProperty="id">
  		INSERT INTO `reservation`
  		(
- 		`userId`
-		, `scheduleId`
-		, `payment`
-		, `usedPoint`
-		, `adult`
-		, `adolescent`
-		, `senior`
-		, `seatLocation`
-		, `createdAt`
+	 		`userId`
+			, `scheduleId`
+			, `payment`
+			, `usedPoint`
+			, `adult`
+			, `adolescent`
+			, `senior`
+			, `seatLocation`
+			, `createdAt`
  		)
  		VALUES
  		(
- 		#{userId}
- 		, #{scheduleId}
- 		, #{payment}
- 		, #{usedPoint}
- 		, #{adult}
- 		, #{adolescent}
- 		, #{senior}
- 		, #{seatLocation}
- 		, NOW()
+	 		#{userId}
+	 		, #{scheduleId}
+	 		, #{payment}
+	 		, #{usedPoint}
+	 		, #{adult}
+	 		, #{adolescent}
+	 		, #{senior}
+	 		, #{seatLocation}
+	 		, NOW()
  		)
  	</insert>
  	
