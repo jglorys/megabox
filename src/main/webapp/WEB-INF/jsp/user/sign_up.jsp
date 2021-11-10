@@ -13,7 +13,7 @@
 		<h5 class="font-weight-bold col-3 ml-5" style="text-align: right;">아이디</h5>
 		<input type="text" id="userLoginId" placeholder="아이디를 입력해주세요"  class="col-6 form-control">
 		
-		<button type="button"class="btn text-white bg-secondary ml-4" id="loginIdCheckBtn">중복확인</button>
+		<button type="button"class="btn text-white bg-secondary ml-4" id="loginIdCheckBtn" style=" border-radius: 1em;">중복확인</button>
 	</div>
 	<div class="d-flex justify-content-center align-items-center ml-5">
 		<div id="idCheckLength" class="small text-danger d-none">ID를 4자 이상 입력해주세요.</div>
@@ -43,7 +43,7 @@
 		<input type="password" id="confirmUserPassword" placeholder="비밀번호를 입력해주세요" class="col-6 form-control">
 	</div>
 	<div class="d-flex justify-content-center align-items-center p-4 m-5">
-		<button type="button" id="signUpBtn" class="btn text-white btn-block" style="background-color: #380B61;">회원가입</button>
+		<button type="button" id="signUpBtn" class="btn text-white btn-block" style="background-color: #380B61; height:50px;border-radius: 1em;">회원가입</button>
 	</div>
 	
 </div>

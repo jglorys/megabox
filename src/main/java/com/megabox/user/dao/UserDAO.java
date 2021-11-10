@@ -21,4 +21,10 @@ public interface UserDAO {
 	public void updateUserPoint(
 			@Param("id") int id, 
 			@Param("point") int point);
+	
+	public void updateUser(
+			@Param("loginId") String loginId, 
+			@Param("email") String email, 
+			@Param("phoneNumber") String phoneNumber, 
+			@Param("password") String password);
 }

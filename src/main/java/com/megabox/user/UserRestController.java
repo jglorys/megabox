@@ -91,4 +91,27 @@ public class UserRestController {
 		}
 		return result;
 	}
+	
+	@PostMapping("/update")
+	public Map<String, Object> userUpdate(@RequestParam("userEmail") String userEmail,
+										@RequestParam("userPhoneNumber") String userPhoneNumber,
+										@RequestParam("userPassword") String userPassword,
+										@RequestParam("newPassword") String newPassword,
+										HttpServletRequest request) {	
+		Map<String, Object> result = new HashMap<>();
+		HttpSession session = request.getSession();
+		result.put("result", "error");
+		String loginId = (String) session.getAttribute("userLoginId");
+		String encryptPassword = EncryptUtils.md5(userPassword);
+		if ( userBO.isCorrectPassword(loginId, encryptPassword) == false) {
+			// user가 null이라면 기존 패스워드 입력 잘못함
+			result.put("result", "notCorrectPW");
+			return result;
+		}
+		String encryptNewPassword = EncryptUtils.md5(newPassword);
+		userBO.updateUser(loginId, userEmail, userPhoneNumber, encryptNewPassword);
+		result.put("result", "success");
+		return result;
+		
+	}
 }

@@ -23,11 +23,8 @@ public class FileManagerService {
 	// 넘어온 덩어리 파일을 우리 컴퓨터 폴더에 저장하고, WAS의 url 만들고, url에 접속할때 사진 뿌리게 함
 	
 	// 실제 이미지가 저장될 경로 (경로 복붙하고 맨 마지막에 "/" 붙이자!
-	public final static String FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images/";
+	public final static String FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images\\admin/";
 
-	//public final static String FILE_UPLOAD_PATH ="C:\\Users\\jglor\\웹개발\\6_spring_project\\megabox\\images/";
-	
-	
 	// 바이너리 파일을 통으로 받아서 url로 만들고 걔를 리턴 (나중에 BO가 파일줄테니깐 url내놓으라고 함)
 	public String saveFile(String admin, MultipartFile file) throws IOException {
 		// 파일 디렉토리 경로    예: marobiana_2620349394/apple.png (loginId_현재시간을 변환한값) => 파일명이 겹치지 않게 현재시간을 경로에 붙여준다.
@@ -48,7 +45,7 @@ public class FileManagerService {
 		Files.write(path, bytes);
 		
 		// 이미지 URL Path를 리턴한다. - 웹주소로 들어갔을때 이미지가 보여지게
-		// 예) http://localhost/images/admin/   admin_138237428/   apple.png
+		// 예) http://localhost/images/   admin_138237428/   apple.png
 		return "/images/" + directoryName + file.getOriginalFilename();
 	}
 	

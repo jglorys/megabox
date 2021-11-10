@@ -86,4 +86,16 @@ public class UserController {
 		model.addAttribute("viewName", "user/point");
 		return "template/layout";
 	}
+	
+	@RequestMapping("/user_update_view")
+	public String userUpdateView(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		Integer userId = (Integer) session.getAttribute("userId");
+		if (userId == null) {
+			//userId가 없으면 로그인 하는 페이지로 보낸다 (redirect)
+			return "redirect:/user/sign_in_view";
+		}
+		model.addAttribute("viewName", "user/user_update");
+		return "template/layout";
+	}
 }

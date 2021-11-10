@@ -85,4 +85,16 @@
 			`id` = #{id}
  	
  	</update>
+ 	
+ 	<update id="updateUser" parameterType="map">
+ 		UPDATE `user`
+		SET
+			`email` = #{email}
+			,`phoneNumber` = #{phoneNumber}
+			,`password` = #{password}
+			,`updatedAt` = NOW()
+		WHERE
+			`loginId` = #{loginId}
+ 	</update>
+
 </mapper>

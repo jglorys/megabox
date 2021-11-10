@@ -22,7 +22,7 @@
 		</div>
 		<div class="h-50 d-flex align-items-end justify-content-around">
 			<a href="#" class="font-weight-bold" style="color: black; text-decoration:none">이벤트</a>
-			<a href="#" class="font-weight-bold" style="color: black; text-decoration:none">스토어</a>
+			<a href="/admin/store/store_list_view" class="font-weight-bold" style="color: black; text-decoration:none">스토어</a>
 		</div>	
 	</div>
 	
