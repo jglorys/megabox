@@ -12,8 +12,8 @@
 		<div class="mt-4 d-flex justify-content-start flex-wrap ml-2" style="width:950px">
 			<c:forEach items="${storeList}" var="store">
 				<div class="m-3 d-flex justify-content-center flex-wrap" style="height:350px;width:280px ;background-color: #fff;border-radius: 1em;">
-					<img src="${store.productImg}" width="250px" height="220px">
-					<div style="height:130px;">
+					<img src="${store.productImg}" width="220px" height="200px">
+					<div style="height:130px; width:220px">
 						<span class="font-weight-bold">${store.product}</span>
 						<span class="text-secondary ml-5">잔여수량</span><br>
 						<span class="text-secondary mt-1">${store.composition}</span><br>
