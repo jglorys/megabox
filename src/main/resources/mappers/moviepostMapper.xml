@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.megabox.moviepost.dao.MoviePostDAO">
+ 	<insert id="insertMoviePost" parameterType="map">
+ 		INSERT INTO `moviepost`
+ 		(
+ 		`userId`
+		,`movieId`
+		,`content`
+		,`createdAt`
+		,`updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 		#{userId}
+ 		, #{movieId}
+ 		, #{content}
+ 		, NOW()
+ 		, NOW()
+ 		)
+ 	</insert>
+ 	
+ 	<select id="selectMoviePostList" resultType="com.megabox.moviepost.model.MoviePost">
+ 		SELECT
+ 			`id`
+	 		,`userId`
+			,`movieId`
+			,`content`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM 
+ 			`moviepost`
+ 		ORDER BY `updatedAt` DESC
+ 	</select>
+ 	
+ 	<delete id="deleteMoviePost" parameterType="int">
+ 		DELETE 
+		FROM 
+			`moviepost`
+		WHERE
+			`id` = #{id}
+ 	</delete>
+ </mapper>

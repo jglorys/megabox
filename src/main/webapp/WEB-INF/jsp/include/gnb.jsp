@@ -75,7 +75,7 @@
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/reservation_list_view" style="color: white; text-decoration:none">예매/구매내역</a></td>
 					</tr>
 					<tr class="text-center">
-						<td style="border-top: none; border-bottom: none; height:70px;"><a href="#"  style="color: white; text-decoration:none">무비포스트</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/moviepost/moviepost_list_view"  style="color: white; text-decoration:none">무비포스트</a></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/reservation/reservation_date_select_view"  style="color: white; text-decoration:none">예매하기</a></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/event/past_event_view"  style="color: white; text-decoration:none">지난 이벤트</a></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"></td>

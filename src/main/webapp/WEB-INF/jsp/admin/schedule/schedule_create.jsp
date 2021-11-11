@@ -53,11 +53,11 @@ $(document).ready(function(){
 	//scheduleUploadBtn 클릭
 	$('#scheduleUploadBtn').on('click', function(){
 		//validation check
-		let movie = $('#scheduleMovie').val(); 
+		let movieId = $('#scheduleMovie').val(); 
 		let auditorium = $('#scheduleAuditorium').val();
 		let time = $('#scheduleTime').val().trim();
 		
-		if (movie == 'none') {
+		if (movieId == null) {
 			alert('영화를 선택해주세요');
 			return;
 		} 
@@ -71,7 +71,6 @@ $(document).ready(function(){
 		}
 		alert(time.substring(0,4) + '년' + time.substring(4,6) + '월' + time.substring(6,8) + '일' + time.substring(8,10) + '시' + time.substring(10,12) + '분으로 등록합니다.' );
 		
-		let movieId = $('#scheduleMovie').val();
 		//alert(movieId);
 		let auditoriumId = $('#scheduleAuditorium').val();
 		

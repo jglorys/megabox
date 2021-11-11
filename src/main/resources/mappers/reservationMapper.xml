@@ -82,6 +82,7 @@
 	 		`reservation`
 	 	WHERE
 	 		`userId` = #{userId}
+	 	ORDER BY `createdAt` DESC
  	</select>
  	
  	<delete id="deleteReservation" parameterType="int">
