@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.megabox.admin.store.dao.StoreDAO">
+ 	<insert id="insertStore" parameterType="map">
+ 		INSERT INTO `store`
+ 		(
+ 		`product`
+		,`composition`
+		,`productImg`
+		,`price`
+		,`amount`
+		,`createdAt`
+		,`updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 		#{product}
+ 		, #{composition}
+ 		, #{productImg}
+ 		, #{price}
+ 		, #{amount}
+ 		, NOW()
+ 		, NOW()
+ 		)
+ 	</insert>
+ 	 <select id="selectStoreList" resultType="com.megabox.admin.store.model.Store">
+ 		SELECT
+ 			`id`
+ 			,`product`
+			,`composition`
+			,`productImg`
+			,`price`
+			,`amount`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM 
+ 			`store`
+ 		ORDER BY `updatedAt` DESC
+ 	</select>
+ </mapper>

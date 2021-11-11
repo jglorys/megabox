@@ -54,14 +54,14 @@ $(document).ready(function(){
 	$('#scheduleUploadBtn').on('click', function(){
 		//validation check
 		let movieId = $('#scheduleMovie').val(); 
-		let auditorium = $('#scheduleAuditorium').val();
+		let auditoriumId = $('#scheduleAuditorium').val();
 		let time = $('#scheduleTime').val().trim();
 		
 		if (movieId == null) {
 			alert('영화를 선택해주세요');
 			return;
 		} 
-		if (auditorium == 'none'){
+		if (auditoriumId == null){
 			alert('상영관을 선택해주세요');
 			return;
 		}
@@ -70,9 +70,7 @@ $(document).ready(function(){
 			return;
 		}
 		alert(time.substring(0,4) + '년' + time.substring(4,6) + '월' + time.substring(6,8) + '일' + time.substring(8,10) + '시' + time.substring(10,12) + '분으로 등록합니다.' );
-		
-		//alert(movieId);
-		let auditoriumId = $('#scheduleAuditorium').val();
+
 		
 		let formData = new FormData();
 		formData.append('movieId', movieId);
