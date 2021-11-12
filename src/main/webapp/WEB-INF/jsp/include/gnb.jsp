@@ -40,8 +40,8 @@
 			</div>
 		</c:if>
 		<div class="h-50 d-flex align-items-end justify-content-around">
-			<a href="/event/present_event_view" class="gnb-txt-event"><img alt="gnb event" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-event.png"></a>
-			<a href="#" class="gnb-txt-store"><img alt="gnb store" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-store.png"></a>
+			<a href="#" class="gnb-txt-event"><img alt="gnb event" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-event.png"></a>
+			<a href="/store/store_list_view" class="gnb-txt-store"><img alt="gnb store" src="https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-store.png"></a>
 			<a href="/user/reservation_list_view"><img alt="user" src="https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_960_720.png?__cf_chl_jschl_tk__=_vtuJEm0nxhfOjSXkC8GWFWcs9YX3Qb.B2l8_oTFU60-1636125835-0-gaNycGzNCtE" width="40" height="40"></a>
 		</div>	
 	</div>
@@ -70,14 +70,21 @@
 					<tr class="text-center">
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/movie/movie_list_view" style="color: white; text-decoration:none">전체영화</a></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/schedule/movie_schedule_select_view" style="color: white;text-decoration:none">상영시간표</a></td>
-						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/event/present_event_view" style="color: white; text-decoration:none">진행중 이벤트</a></td>
-						<td style="border-top: none; border-bottom: none; height:70px;"><a href="#" style="color: white; text-decoration:none">팝콘/음료/굿즈</a></td>
-						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/reservation_list_view" style="color: white; text-decoration:none">예매/구매내역</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="#" style="color: white; text-decoration:none">진행중 이벤트</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/store/store_list_view" style="color: white; text-decoration:none">팝콘/음료/굿즈</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/reservation_list_view" style="color: white; text-decoration:none">예매내역</a></td>
 					</tr>
 					<tr class="text-center">
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/moviepost/moviepost_list_view"  style="color: white; text-decoration:none">무비포스트</a></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/reservation/reservation_date_select_view"  style="color: white; text-decoration:none">예매하기</a></td>
-						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/event/past_event_view"  style="color: white; text-decoration:none">지난 이벤트</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="#"  style="color: white; text-decoration:none">지난 이벤트</a></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/purchase_list_view"  style="color: white;text-decoration:none">구매내역</a></td>
+					</tr>
+					<tr class="text-center">
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
+						<td style="border-top: none; border-bottom: none; height:70px;"></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/point_view"  style="color: white;text-decoration:none">멤버십포인트</a></td>
 					</tr>
@@ -88,7 +95,6 @@
 						<td style="border-top: none; border-bottom: none; height:70px;"></td>
 						<td style="border-top: none; border-bottom: none; height:70px;"><a href="/user/user_update_view" style="color: white; text-decoration:none">회원정보 수정</a></td>
 					</tr>
-					
     			</tbody>
     		</table>
     	

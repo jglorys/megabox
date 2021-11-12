@@ -29,4 +29,9 @@ public class PointBO {
 	public void addPoint (int userId, String history, String plusMinus, int changePoint) {
 		pointDAO.insertPoint(userId, history, plusMinus, changePoint);
 	}
+	
+	public void addPointByStore(int userId,int storeId, String history, String plusMinus, int changePoint) {
+		pointDAO.insertPointByStore(userId, storeId, history, plusMinus, changePoint);
+	}
+	
 }
