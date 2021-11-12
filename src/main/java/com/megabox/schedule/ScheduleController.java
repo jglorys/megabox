@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.megabox.admin.movie.bo.MovieBO;
 import com.megabox.admin.movie.model.Movie;
+import com.megabox.admin.schedule.bo.ScheduleBO;
 import com.megabox.schedule.bo.ScheduleViewBO;
 import com.megabox.schedule.model.ScheduleView;
 
 @RequestMapping("/schedule")
 @Controller
 public class ScheduleController {
-
+	
+	@Autowired
+	private ScheduleBO scheduleBO;
+	
 	@Autowired
 	private MovieBO movieBO;
 	

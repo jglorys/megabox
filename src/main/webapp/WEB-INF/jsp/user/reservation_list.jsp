@@ -6,11 +6,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- JSTL Formatting --%>
 
-<%-- 나의 메가박스>>>예매내역@@ $ 구매내역 & 멤버십포인트 & 회원정보수정 --%>
+<%-- 나의 메가박스>>>예매내역@@ & 멤버십포인트 & 회원정보수정 --%>
 <div class="mt-4 p-3">
 	<div class="d-flex justify-content-around align-items-center">
-		<a href="/user/reservation_list_view" class="font-weight-bold mt-4 p-3" style="background-color:#BDBDBD; border-radius: 2em; color: black; text-decoration:none">예매내역</a>
-		<a href="/user/purchase_list_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">구매내역</a>		
+		<a href="/user/reservation_list_view" class="font-weight-bold mt-4 p-3" style="background-color:#BDBDBD; border-radius: 2em; color: black; text-decoration:none">예매/구매내역</a>
 		<a href="/user/point_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">멤버십포인트</a>		
 		<a href="/user/user_update_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">회원정보 수정</a>		
 	</div>
@@ -21,7 +20,7 @@
 	<div style=" width:600px;" >
 	<c:if test="${empty reservationScheduleList}">
 		<div class="d-flex justify-content-center mt-5 pt-5 mb-5">
-			<h1 class="font-weight-bold" style="color: #380B61;">예매 내역이 없습니다</h1>
+			<h1 class="font-weight-bold" style="color: #380B61;">예매/구매 내역이 없습니다</h1>
 		</div>
 	</c:if>
 	<c:forEach var="reservationSchedule" items="${reservationScheduleList}">

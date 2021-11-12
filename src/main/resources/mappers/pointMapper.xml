@@ -64,24 +64,4 @@
  		, NOW()
  		)
  	</insert>
- 	 	<insert id="insertPointByStore" parameterType="map">
- 		INSERT INTO `point`
- 		(
- 		`userId`
-		,`storeId`
-		,`history`
-		,`plusMinus`
-		,`changePoint`
-		,`createdAt`
- 		)
- 		VALUES
- 		(
- 		#{userId}
- 		, #{storeId}
- 		, #{history}
- 		, #{plusMinus}
- 		, #{changePoint}
- 		, NOW()
- 		)
- 	</insert>
 </mapper>

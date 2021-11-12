@@ -27,13 +27,4 @@ public interface PointDAO {
 							@Param("history") String history, 
 							@Param("plusMinus") String plusMinus,
 							@Param("changePoint") int changePoint);
-	
-	public void insertPointByStore(
-			@Param("userId") int userId,
-			@Param("storeId") int storeId, 
-			@Param("history") String history, 
-			@Param("plusMinus") String plusMinus, 
-			@Param("changePoint") int changePoint);
-
-
 }

@@ -77,16 +77,14 @@ public class ReservationBO {
 	
 		reservationDAO.insertReservation(reservation);
 		int reservationId = reservation.getId();
-		// 사용 포인트만큼 User의 point 차감해야 한다 - 포인트가 사용됐다면!!!!
-		if (usedPoint != 0) {
-			// update해야할 user의 잔여 point = 원래 포인트 - usedPoint
-			User user = userBO.getUser(userId);
-			int point = user.getPoint() - usedPoint;
-			userBO.updateUserPoint(userId, point);
-			// PointBO에서 Point테이블에 해당 reservationId로 insert
-			String history = "영화예매";
-			pointBO.addPointByReservation(userId, reservationId, history, "-", usedPoint);
-		}
+		// 사용 포인트만큼 User의 point 차감해야 한다
+		// update해야할 user의 잔여 point = 원래 포인트 - usedPoint
+		User user = userBO.getUser(userId);
+		int point = user.getPoint() - usedPoint;
+		userBO.updateUserPoint(userId, point);
+		// PointBO에서 Point테이블에 해당 reservationId로 insert
+		String history = "영화예매";
+		pointBO.addPointByReservation(userId, reservationId, history, "-", usedPoint);
 		// 추가된 해당 reservationId 리턴 (가장 마지막에 추가된 것임)
 		return reservationId;
 	}

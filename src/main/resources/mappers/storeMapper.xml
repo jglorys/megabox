@@ -39,19 +39,4 @@
  			`store`
  		ORDER BY `updatedAt` DESC
  	</select>
- 	<select id="selectStore" resultType="com.megabox.admin.store.model.Store">
- 		SELECT
- 			`id`
- 			,`product`
-			,`composition`
-			,`productImg`
-			,`price`
-			,`amount`
-			,`createdAt`
-			,`updatedAt`
- 		FROM 
- 			`store`
- 		WHERE
- 			`id` = #{id}
- 	</select>
  </mapper>
