@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.megabox.admin.schedule.bo.ScheduleBO;
 import com.megabox.admin.schedule.model.Schedule;
 import com.megabox.reservation.model.Reservation;
-import com.megabox.reservation.model.ReservationSchedule;
+import com.megabox.reservation.model.ReservationScheduleView;
 
 @Service
-public class ReservationScheduleBO {
+public class ReservationScheduleViewBO {
 	
 	@Autowired
 	private ScheduleBO scheduleBO;
@@ -20,11 +20,11 @@ public class ReservationScheduleBO {
 	@Autowired
 	private ReservationBO reservationBO;
 	
-	public List<ReservationSchedule> getReservationScheduleList (int userId) {
-		List<ReservationSchedule> reservationScheduleList = new ArrayList<>();
+	public List<ReservationScheduleView> getReservationScheduleList (int userId) {
+		List<ReservationScheduleView> reservationScheduleList = new ArrayList<>();
 		List<Reservation> reservationList = reservationBO.getReservationListByUserId(userId);
 		for (Reservation reservation : reservationList) {
-			ReservationSchedule reservationSchedule = new ReservationSchedule();
+			ReservationScheduleView reservationSchedule = new ReservationScheduleView();
 			
 			reservationSchedule.setReservation(reservation);
 			Schedule schedule = scheduleBO.getSchedule(reservation.getScheduleId());

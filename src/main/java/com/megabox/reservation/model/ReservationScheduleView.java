@@ -2,7 +2,7 @@ package com.megabox.reservation.model;
 
 import com.megabox.admin.schedule.model.Schedule;
 
-public class ReservationSchedule {
+public class ReservationScheduleView {
 	private Reservation reservation;
 	private Schedule schedule;
 	
@@ -18,6 +18,7 @@ public class ReservationSchedule {
 	public void setSchedule(Schedule schedule) {
 		this.schedule = schedule;
 	}
+
 	
 	
 }
