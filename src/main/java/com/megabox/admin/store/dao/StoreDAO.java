@@ -17,6 +17,4 @@ public interface StoreDAO {
 			@Param("amount") int amount);
 	
 	public List<Store> selectStoreList();
-	
-	public Store selectStore(int id);
 }
