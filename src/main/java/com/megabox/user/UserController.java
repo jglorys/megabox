@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.megabox.point.bo.PointBO;
 import com.megabox.point.model.Point;
-import com.megabox.reservation.bo.ReservationScheduleBO;
-import com.megabox.reservation.model.ReservationSchedule;
+import com.megabox.purchase.bo.PurchaseStoreViewBO;
+import com.megabox.purchase.model.PurchaseStoreView;
+import com.megabox.reservation.bo.ReservationScheduleViewBO;
+import com.megabox.reservation.model.ReservationScheduleView;
 import com.megabox.user.bo.UserBO;
 import com.megabox.user.model.User;
 
@@ -25,10 +27,14 @@ public class UserController {
 	private UserBO userBO;
 	
 	@Autowired
-	private ReservationScheduleBO reservationScheduleBO;
+	private ReservationScheduleViewBO reservationScheduleBO;
 	
 	@Autowired
 	private PointBO pointBO;
+	
+	
+	@Autowired
+	private PurchaseStoreViewBO purchaseStoreViewBO;
 	
 	@RequestMapping("/sign_in_view")
 	public String signIn(Model model) {
@@ -63,14 +69,29 @@ public class UserController {
 			return "redirect:/user/sign_in_view";
 		}
 		User user = userBO.getUser(userId);
-		List<ReservationSchedule> reservationScheduleList = reservationScheduleBO.getReservationScheduleList(userId);
-		
+		List<ReservationScheduleView> reservationScheduleList = reservationScheduleBO.getReservationScheduleList(userId);
 		model.addAttribute("reservationScheduleList", reservationScheduleList);
 		model.addAttribute("user", user);
 		model.addAttribute("viewName", "user/reservation_list");
 		return "template/layout";
 	}
 	
+	@RequestMapping("/purchase_list_view")
+	public String purchaseListView(HttpServletRequest request,
+								Model model) {
+		HttpSession session = request.getSession();
+		Integer userId = (Integer) session.getAttribute("userId");
+		if (userId == null) {
+			//userId가 없으면 로그인 하는 페이지로 보낸다 (redirect)
+			return "redirect:/user/sign_in_view";
+		}
+		User user = userBO.getUser(userId);
+		List<PurchaseStoreView> purchaseStoreViewList = purchaseStoreViewBO.getPurchaseStoreViewList(userId);
+		model.addAttribute("purchaseStoreViewList", purchaseStoreViewList);
+		model.addAttribute("user", user);
+		model.addAttribute("viewName", "user/purchase_list");
+		return "template/layout";
+	}
 	@RequestMapping("/point_view")
 	public String userPointView(HttpServletRequest request, Model model) {
 		HttpSession session = request.getSession();

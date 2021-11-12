@@ -8,7 +8,8 @@
 <%-- 나의 메가박스>>>예매내역 & 멤버십포인트@@ & 회원정보수정 --%>
 <div class="mt-4 p-3">
 	<div class="d-flex justify-content-around align-items-center">
-		<a href="/user/reservation_list_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">예매/구매내역</a>		
+		<a href="/user/reservation_list_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">예매내역</a>		
+		<a href="/user/purchase_list_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">구매내역</a>
 		<a href="/user/point_view" class="font-weight-bold mt-4 p-3" style="background-color:#BDBDBD; border-radius: 2em; color: black; text-decoration:none">멤버십포인트</a>		
 		<a href="/user/user_update_view" class="font-weight-bold mt-4 p-3" style="color: black; text-decoration:none">회원정보 수정</a>		
 	</div>
